@@ -1,0 +1,560 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		99D43FA7C25FA0A8F840BD8C /* Pods_chessTest2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3012F62F17206AF66BC52BA2 /* Pods_chessTest2.framework */; };
+		B72FD8641D4370D500291F7D /* TableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD8631D4370D500291F7D /* TableTask.swift */; };
+		B72FD8661D4372F600291F7D /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD8651D4372F600291F7D /* Problem.swift */; };
+		B73DE5F11D424AFF00A1CD0A /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5E81D424AFF00A1CD0A /* Bishop.swift */; };
+		B73DE5F21D424AFF00A1CD0A /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5E91D424AFF00A1CD0A /* King.swift */; };
+		B73DE5F31D424AFF00A1CD0A /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5EA1D424AFF00A1CD0A /* Knight.swift */; };
+		B73DE5F41D424AFF00A1CD0A /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5EB1D424AFF00A1CD0A /* Move.swift */; };
+		B73DE5F51D424AFF00A1CD0A /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5EC1D424AFF00A1CD0A /* Piece.swift */; };
+		B73DE5F61D424AFF00A1CD0A /* Pieces.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5ED1D424AFF00A1CD0A /* Pieces.swift */; };
+		B73DE5F71D424AFF00A1CD0A /* Pone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5EE1D424AFF00A1CD0A /* Pone.swift */; };
+		B73DE5F81D424AFF00A1CD0A /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5EF1D424AFF00A1CD0A /* Queen.swift */; };
+		B73DE5F91D424AFF00A1CD0A /* Rock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5F01D424AFF00A1CD0A /* Rock.swift */; };
+		B7A9635C1D38AA9700561A50 /* WeightLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9635B1D38AA9700561A50 /* WeightLessonViewController.swift */; };
+		B7A9635E1D38BF9A00561A50 /* PiecesWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9635D1D38BF9A00561A50 /* PiecesWeightViewController.swift */; };
+		B7A963601D38C05900561A50 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9635F1D38C05900561A50 /* WeightViewController.swift */; };
+		B7A963621D38C14700561A50 /* MyView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A963611D38C14700561A50 /* MyView2.swift */; };
+		B7A963641D38FBC800561A50 /* CustomPoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A963631D38FBC800561A50 /* CustomPoneView.swift */; };
+		B7A963681D3CDC8A00561A50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A963671D3CDC8A00561A50 /* Assets.xcassets */; };
+		B7F95DD61D3816C6002D16CB /* SideNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F95DD51D3816C6002D16CB /* SideNavigationViewController.swift */; };
+		B7F95DD81D381DE7002D16CB /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F95DD71D381DE7002D16CB /* MenuTableViewController.swift */; };
+		B7F95DDA1D3825D7002D16CB /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F95DD91D3825D7002D16CB /* TempViewController.swift */; };
+		B7F95DDC1D383197002D16CB /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F95DDB1D383197002D16CB /* MyTableViewCell.swift */; };
+		B7FFB6031D339FAD003C148B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB6021D339FAD003C148B /* AppDelegate.swift */; };
+		B7FFB6051D339FAD003C148B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB6041D339FAD003C148B /* ViewController.swift */; };
+		B7FFB6081D339FAD003C148B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7FFB6061D339FAD003C148B /* Main.storyboard */; };
+		B7FFB60B1D339FAD003C148B /* chessTest2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB6091D339FAD003C148B /* chessTest2.xcdatamodeld */; };
+		B7FFB6101D339FAD003C148B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7FFB60E1D339FAD003C148B /* LaunchScreen.storyboard */; };
+		B7FFB6391D34BAB0003C148B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB6381D34BAB0003C148B /* RegisterViewController.swift */; };
+		B7FFB63B1D350110003C148B /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB63A1D35010F003C148B /* LessonsViewController.swift */; };
+		B7FFB63D1D35028F003C148B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB63C1D35028F003C148B /* LoginViewController.swift */; };
+		B7FFB63F1D3572FB003C148B /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB63E1D3572FB003C148B /* LessonViewController.swift */; };
+		B7FFB6411D357A4F003C148B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB6401D357A4F003C148B /* ContentViewController.swift */; };
+		B7FFB6431D358B3E003C148B /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB6421D358B3E003C148B /* Board.swift */; };
+		B7FFB6451D358B47003C148B /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB6441D358B47003C148B /* Cell.swift */; };
+		B7FFB65F1D359603003C148B /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB65E1D359603003C148B /* Lesson.swift */; };
+		B7FFB6621D360870003C148B /* MyView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB6611D360870003C148B /* MyView1.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3012F62F17206AF66BC52BA2 /* Pods_chessTest2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chessTest2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		748AE6D82A5F057D2BA3E2E1 /* Pods-chessTest2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chessTest2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chessTest2/Pods-chessTest2.debug.xcconfig"; sourceTree = "<group>"; };
+		A510AFE872A88F77F864A3A0 /* Pods-chessTest2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chessTest2.release.xcconfig"; path = "Pods/Target Support Files/Pods-chessTest2/Pods-chessTest2.release.xcconfig"; sourceTree = "<group>"; };
+		B72FD8631D4370D500291F7D /* TableTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTask.swift; sourceTree = "<group>"; };
+		B72FD8651D4372F600291F7D /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
+		B73DE5E81D424AFF00A1CD0A /* Bishop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bishop.swift; sourceTree = "<group>"; };
+		B73DE5E91D424AFF00A1CD0A /* King.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = King.swift; sourceTree = "<group>"; };
+		B73DE5EA1D424AFF00A1CD0A /* Knight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
+		B73DE5EB1D424AFF00A1CD0A /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
+		B73DE5EC1D424AFF00A1CD0A /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		B73DE5ED1D424AFF00A1CD0A /* Pieces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pieces.swift; sourceTree = "<group>"; };
+		B73DE5EE1D424AFF00A1CD0A /* Pone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pone.swift; sourceTree = "<group>"; };
+		B73DE5EF1D424AFF00A1CD0A /* Queen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
+		B73DE5F01D424AFF00A1CD0A /* Rock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock.swift; sourceTree = "<group>"; };
+		B7A9635B1D38AA9700561A50 /* WeightLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightLessonViewController.swift; sourceTree = "<group>"; };
+		B7A9635D1D38BF9A00561A50 /* PiecesWeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiecesWeightViewController.swift; sourceTree = "<group>"; };
+		B7A9635F1D38C05900561A50 /* WeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
+		B7A963611D38C14700561A50 /* MyView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView2.swift; sourceTree = "<group>"; };
+		B7A963631D38FBC800561A50 /* CustomPoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPoneView.swift; sourceTree = "<group>"; };
+		B7A963671D3CDC8A00561A50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7F95DD51D3816C6002D16CB /* SideNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideNavigationViewController.swift; sourceTree = "<group>"; };
+		B7F95DD71D381DE7002D16CB /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		B7F95DD91D3825D7002D16CB /* TempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		B7F95DDB1D383197002D16CB /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		B7FFB5FF1D339FAD003C148B /* chessTest2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chessTest2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7FFB6021D339FAD003C148B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B7FFB6041D339FAD003C148B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B7FFB6071D339FAD003C148B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B7FFB60A1D339FAD003C148B /* chessTest2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = chessTest2.xcdatamodel; sourceTree = "<group>"; };
+		B7FFB60F1D339FAD003C148B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B7FFB6111D339FAD003C148B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7FFB6381D34BAB0003C148B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B7FFB63A1D35010F003C148B /* LessonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
+		B7FFB63C1D35028F003C148B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B7FFB63E1D3572FB003C148B /* LessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		B7FFB6401D357A4F003C148B /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		B7FFB6421D358B3E003C148B /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Board.swift; path = ../../chessTest/chessTest/Board.swift; sourceTree = "<group>"; };
+		B7FFB6441D358B47003C148B /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = ../../chessTest/chessTest/Cell.swift; sourceTree = "<group>"; };
+		B7FFB64F1D358B6A003C148B /* chessTest1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; name = chessTest1.app; path = "/Users/salta/Library/Developer/Xcode/DerivedData/chessTest1-dglhlcregfblhqdjxatchcdfrqzl/Build/Products/Debug-iphonesimulator/chessTest1.app"; sourceTree = "<absolute>"; };
+		B7FFB65E1D359603003C148B /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		B7FFB6611D360870003C148B /* MyView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView1.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B7FFB5FC1D339FAD003C148B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99D43FA7C25FA0A8F840BD8C /* Pods_chessTest2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78103D7794496F838BF0B644 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3012F62F17206AF66BC52BA2 /* Pods_chessTest2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7FFB5F61D339FAD003C148B = {
+			isa = PBXGroup;
+			children = (
+				B7FFB6011D339FAD003C148B /* chessTest2 */,
+				B7FFB6001D339FAD003C148B /* Products */,
+				F15F81DA975BBBD8C3082352 /* Pods */,
+				78103D7794496F838BF0B644 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B7FFB6001D339FAD003C148B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7FFB5FF1D339FAD003C148B /* chessTest2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B7FFB6011D339FAD003C148B /* chessTest2 */ = {
+			isa = PBXGroup;
+			children = (
+				B7FFB6601D360854003C148B /* View */,
+				B7FFB65B1D358B94003C148B /* Model */,
+				B7FFB65C1D358BA9003C148B /* supporting */,
+				B7FFB65D1D358BCB003C148B /* viewControllers */,
+				B7FFB6501D358B6A003C148B /* Products */,
+			);
+			path = chessTest2;
+			sourceTree = "<group>";
+		};
+		B7FFB6501D358B6A003C148B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7FFB64F1D358B6A003C148B /* chessTest1.app */,
+			);
+			name = Products;
+			path = ../../chessTest1;
+			sourceTree = "<group>";
+		};
+		B7FFB65B1D358B94003C148B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B73DE5E81D424AFF00A1CD0A /* Bishop.swift */,
+				B73DE5E91D424AFF00A1CD0A /* King.swift */,
+				B73DE5EA1D424AFF00A1CD0A /* Knight.swift */,
+				B73DE5EB1D424AFF00A1CD0A /* Move.swift */,
+				B73DE5EC1D424AFF00A1CD0A /* Piece.swift */,
+				B73DE5ED1D424AFF00A1CD0A /* Pieces.swift */,
+				B73DE5EE1D424AFF00A1CD0A /* Pone.swift */,
+				B73DE5EF1D424AFF00A1CD0A /* Queen.swift */,
+				B73DE5F01D424AFF00A1CD0A /* Rock.swift */,
+				B7FFB6421D358B3E003C148B /* Board.swift */,
+				B7FFB6441D358B47003C148B /* Cell.swift */,
+				B7FFB65E1D359603003C148B /* Lesson.swift */,
+				B72FD8631D4370D500291F7D /* TableTask.swift */,
+				B72FD8651D4372F600291F7D /* Problem.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B7FFB65C1D358BA9003C148B /* supporting */ = {
+			isa = PBXGroup;
+			children = (
+				B7A963671D3CDC8A00561A50 /* Assets.xcassets */,
+				B7FFB6091D339FAD003C148B /* chessTest2.xcdatamodeld */,
+				B7FFB6111D339FAD003C148B /* Info.plist */,
+				B7FFB60E1D339FAD003C148B /* LaunchScreen.storyboard */,
+				B7FFB6061D339FAD003C148B /* Main.storyboard */,
+				B7FFB6021D339FAD003C148B /* AppDelegate.swift */,
+			);
+			name = supporting;
+			sourceTree = "<group>";
+		};
+		B7FFB65D1D358BCB003C148B /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7FFB6041D339FAD003C148B /* ViewController.swift */,
+				B7FFB6381D34BAB0003C148B /* RegisterViewController.swift */,
+				B7FFB63A1D35010F003C148B /* LessonsViewController.swift */,
+				B7FFB63C1D35028F003C148B /* LoginViewController.swift */,
+				B7FFB63E1D3572FB003C148B /* LessonViewController.swift */,
+				B7FFB6401D357A4F003C148B /* ContentViewController.swift */,
+				B7F95DD51D3816C6002D16CB /* SideNavigationViewController.swift */,
+				B7F95DD71D381DE7002D16CB /* MenuTableViewController.swift */,
+				B7F95DD91D3825D7002D16CB /* TempViewController.swift */,
+				B7A9635B1D38AA9700561A50 /* WeightLessonViewController.swift */,
+				B7A9635D1D38BF9A00561A50 /* PiecesWeightViewController.swift */,
+				B7A9635F1D38C05900561A50 /* WeightViewController.swift */,
+			);
+			name = viewControllers;
+			sourceTree = "<group>";
+		};
+		B7FFB6601D360854003C148B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B7FFB6611D360870003C148B /* MyView1.swift */,
+				B7F95DDB1D383197002D16CB /* MyTableViewCell.swift */,
+				B7A963611D38C14700561A50 /* MyView2.swift */,
+				B7A963631D38FBC800561A50 /* CustomPoneView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F15F81DA975BBBD8C3082352 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				748AE6D82A5F057D2BA3E2E1 /* Pods-chessTest2.debug.xcconfig */,
+				A510AFE872A88F77F864A3A0 /* Pods-chessTest2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B7FFB5FE1D339FAD003C148B /* chessTest2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7FFB6141D339FAD003C148B /* Build configuration list for PBXNativeTarget "chessTest2" */;
+			buildPhases = (
+				2EB73D87A12AEFDFC6BE1036 /* [CP] Check Pods Manifest.lock */,
+				B7FFB5FB1D339FAD003C148B /* Sources */,
+				B7FFB5FC1D339FAD003C148B /* Frameworks */,
+				B7FFB5FD1D339FAD003C148B /* Resources */,
+				10C0B9BC3B1558F539A8C73F /* [CP] Embed Pods Frameworks */,
+				965E5D16D0EAEF6FC64D6090 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = chessTest2;
+			productName = chessTest2;
+			productReference = B7FFB5FF1D339FAD003C148B /* chessTest2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B7FFB5F71D339FAD003C148B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = saltaim;
+				TargetAttributes = {
+					B7FFB5FE1D339FAD003C148B = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = AB65P3C5XF;
+					};
+				};
+			};
+			buildConfigurationList = B7FFB5FA1D339FAD003C148B /* Build configuration list for PBXProject "chessTest2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B7FFB5F61D339FAD003C148B;
+			productRefGroup = B7FFB6001D339FAD003C148B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B7FFB5FE1D339FAD003C148B /* chessTest2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7FFB5FD1D339FAD003C148B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7FFB6101D339FAD003C148B /* LaunchScreen.storyboard in Resources */,
+				B7FFB6081D339FAD003C148B /* Main.storyboard in Resources */,
+				B7A963681D3CDC8A00561A50 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10C0B9BC3B1558F539A8C73F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chessTest2/Pods-chessTest2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EB73D87A12AEFDFC6BE1036 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		965E5D16D0EAEF6FC64D6090 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chessTest2/Pods-chessTest2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B7FFB5FB1D339FAD003C148B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B73DE5F91D424AFF00A1CD0A /* Rock.swift in Sources */,
+				B7A963621D38C14700561A50 /* MyView2.swift in Sources */,
+				B7A963641D38FBC800561A50 /* CustomPoneView.swift in Sources */,
+				B72FD8641D4370D500291F7D /* TableTask.swift in Sources */,
+				B73DE5F21D424AFF00A1CD0A /* King.swift in Sources */,
+				B7FFB6411D357A4F003C148B /* ContentViewController.swift in Sources */,
+				B73DE5F31D424AFF00A1CD0A /* Knight.swift in Sources */,
+				B7F95DD81D381DE7002D16CB /* MenuTableViewController.swift in Sources */,
+				B7FFB63F1D3572FB003C148B /* LessonViewController.swift in Sources */,
+				B73DE5F61D424AFF00A1CD0A /* Pieces.swift in Sources */,
+				B7F95DDA1D3825D7002D16CB /* TempViewController.swift in Sources */,
+				B73DE5F51D424AFF00A1CD0A /* Piece.swift in Sources */,
+				B7F95DD61D3816C6002D16CB /* SideNavigationViewController.swift in Sources */,
+				B7FFB63D1D35028F003C148B /* LoginViewController.swift in Sources */,
+				B7A963601D38C05900561A50 /* WeightViewController.swift in Sources */,
+				B7FFB6051D339FAD003C148B /* ViewController.swift in Sources */,
+				B7FFB63B1D350110003C148B /* LessonsViewController.swift in Sources */,
+				B7A9635E1D38BF9A00561A50 /* PiecesWeightViewController.swift in Sources */,
+				B7FFB6621D360870003C148B /* MyView1.swift in Sources */,
+				B73DE5F41D424AFF00A1CD0A /* Move.swift in Sources */,
+				B7FFB6031D339FAD003C148B /* AppDelegate.swift in Sources */,
+				B73DE5F11D424AFF00A1CD0A /* Bishop.swift in Sources */,
+				B73DE5F81D424AFF00A1CD0A /* Queen.swift in Sources */,
+				B7FFB60B1D339FAD003C148B /* chessTest2.xcdatamodeld in Sources */,
+				B7A9635C1D38AA9700561A50 /* WeightLessonViewController.swift in Sources */,
+				B72FD8661D4372F600291F7D /* Problem.swift in Sources */,
+				B7F95DDC1D383197002D16CB /* MyTableViewCell.swift in Sources */,
+				B7FFB6451D358B47003C148B /* Cell.swift in Sources */,
+				B7FFB65F1D359603003C148B /* Lesson.swift in Sources */,
+				B7FFB6391D34BAB0003C148B /* RegisterViewController.swift in Sources */,
+				B7FFB6431D358B3E003C148B /* Board.swift in Sources */,
+				B73DE5F71D424AFF00A1CD0A /* Pone.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B7FFB6061D339FAD003C148B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7FFB6071D339FAD003C148B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B7FFB60E1D339FAD003C148B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7FFB60F1D339FAD003C148B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B7FFB6121D339FAD003C148B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B7FFB6131D339FAD003C148B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B7FFB6151D339FAD003C148B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 748AE6D82A5F057D2BA3E2E1 /* Pods-chessTest2.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Almas Tuyakbayev (AB65P3C5XF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Almas Tuyakbayev (AB65P3C5XF)";
+				INFOPLIST_FILE = chessTest2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ChessCheff;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B7FFB6161D339FAD003C148B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A510AFE872A88F77F864A3A0 /* Pods-chessTest2.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Almas Tuyakbayev (AB65P3C5XF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Almas Tuyakbayev (AB65P3C5XF)";
+				INFOPLIST_FILE = chessTest2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ChessCheff;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B7FFB5FA1D339FAD003C148B /* Build configuration list for PBXProject "chessTest2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7FFB6121D339FAD003C148B /* Debug */,
+				B7FFB6131D339FAD003C148B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7FFB6141D339FAD003C148B /* Build configuration list for PBXNativeTarget "chessTest2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7FFB6151D339FAD003C148B /* Debug */,
+				B7FFB6161D339FAD003C148B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B7FFB6091D339FAD003C148B /* chessTest2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B7FFB60A1D339FAD003C148B /* chessTest2.xcdatamodel */,
+			);
+			currentVersion = B7FFB60A1D339FAD003C148B /* chessTest2.xcdatamodel */;
+			path = chessTest2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B7FFB5F71D339FAD003C148B /* Project object */;
+}

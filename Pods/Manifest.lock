@@ -1,0 +1,36 @@
+PODS:
+  - Backendless (3.0.27)
+  - Cartography (0.5.0)
+  - ENSwiftSideMenu (0.1.1)
+  - KFSwiftImageLoader (2.0.1)
+  - Navajo-Swift (0.0.6)
+  - SideMenu (1.1.7)
+
+DEPENDENCIES:
+  - Backendless
+  - Cartography (from `https://github.com/robb/Cartography`)
+  - ENSwiftSideMenu (~> 0.1.1)
+  - KFSwiftImageLoader (~> 2.0)
+  - Navajo-Swift
+  - SideMenu
+
+EXTERNAL SOURCES:
+  Cartography:
+    :git: https://github.com/robb/Cartography
+
+CHECKOUT OPTIONS:
+  Cartography:
+    :commit: 114a314ce43ff68255c16a70e4c53824c9ecd539
+    :git: https://github.com/robb/Cartography
+
+SPEC CHECKSUMS:
+  Backendless: 565a82d9aa6ec01257e904e0a5c0146ffdb503ed
+  Cartography: de3e85d2fc2d7288a2e7c89e1ac6cad08599d75e
+  ENSwiftSideMenu: a934caefbe811e4925f172009349da4a49901307
+  KFSwiftImageLoader: a2b8a33a89116c767e7af8d2c109e8c483037b19
+  Navajo-Swift: 3d7b1fe27e0db8052bb09b92043e1cfbd0513772
+  SideMenu: 7b420772e1aa7a2b3a0b0e191566e7e8e0868f53
+
+PODFILE CHECKSUM: c210840adef733221e1e1cd815e0c4e0df013e60
+
+COCOAPODS: 1.0.1
