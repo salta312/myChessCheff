@@ -39,7 +39,7 @@ class ContentViewController: UIViewController {
         button.setImage(self.resizeImage(UIImage(named: "export1")!, targetSize: CGSize(width: CGFloat(30), height: CGFloat(30))), forState: .Normal)
         button.addTarget(self, action: #selector(ContentViewController.next), forControlEvents: .TouchUpInside)
 
-        print("I added button")
+       // print("I added button")
         return button
     }()
     lazy var button1: UIButton = {
@@ -65,7 +65,7 @@ class ContentViewController: UIViewController {
     func draw(){
         let v = MyView1()
         let wid = view.frame.size.width
-        print("Wid = \(wid)")
+       // print("Wid = \(wid)")
         v.lesson = self.lesson
         //v.num = self.num
         view.backgroundColor = UIColor.blackColor()
@@ -76,7 +76,7 @@ class ContentViewController: UIViewController {
         view.addSubview(button1)
         label.text = lesson.text
         let h = Cell.Sheight*8+50
-        print("Height is \(Cell.Sheight)")
+      //  print("Height is \(Cell.Sheight)")
         constrain(view, v, label, label1, button){
             view, v, label, label1, button in
             //label.top == view.top
@@ -122,7 +122,7 @@ class ContentViewController: UIViewController {
                     //print("I am here")
                 }
 
-        print("My size is \(label.frame.size.height)")
+        //print("My size is \(label.frame.size.height)")
 
       //  print(" final \(v.frame.height)")
        // print(" final \(v.frame.width)")
@@ -149,11 +149,11 @@ class ContentViewController: UIViewController {
         return newImage
     }
     func next(){
-        print("I am shocked")
+       // print("I am shocked")
         prot.next(currentNum)
     }
     func previous(sender: UIButton){
-        print("I am also shocked")
+        //print("I am also shocked")
         prot.previous(currentNum)
     }
     

@@ -120,8 +120,8 @@ class LessonsViewController: UIViewController {
             //label.centerX == v.centerX
             
         }
-        print(view.frame.size.height)
-        print(view.frame.size.width)
+       // print(view.frame.size.height)
+       // print(view.frame.size.width)
 
 //        let defaults = NSUserDefaults.standardUserDefaults()
 //        if let w = defaults.stringForKey("screenWidth"){

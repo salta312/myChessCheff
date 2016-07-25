@@ -13,6 +13,7 @@ pod 'KFSwiftImageLoader', '~> 2.0'
 pod 'Navajo-Swift'
 pod 'SideMenu'
 pod 'ENSwiftSideMenu', '~> 0.1.1'
+pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 
 
 end

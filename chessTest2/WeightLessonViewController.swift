@@ -101,8 +101,8 @@ class WeightLessonViewController: UIViewController {
             //label.centerX == v.centerX
             
         }
-        print(view.frame.size.height)
-        print(view.frame.size.width)
+       // print(view.frame.size.height)
+      //  print(view.frame.size.width)
         
 
     }

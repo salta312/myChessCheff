@@ -10,6 +10,8 @@
 		99D43FA7C25FA0A8F840BD8C /* Pods_chessTest2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3012F62F17206AF66BC52BA2 /* Pods_chessTest2.framework */; };
 		B72FD8641D4370D500291F7D /* TableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD8631D4370D500291F7D /* TableTask.swift */; };
 		B72FD8661D4372F600291F7D /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD8651D4372F600291F7D /* Problem.swift */; };
+		B72FD86A1D43752300291F7D /* ProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD8691D43752300291F7D /* ProblemViewController.swift */; };
+		B72FD86C1D43882C00291F7D /* Problems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD86B1D43882C00291F7D /* Problems.swift */; };
 		B73DE5F11D424AFF00A1CD0A /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5E81D424AFF00A1CD0A /* Bishop.swift */; };
 		B73DE5F21D424AFF00A1CD0A /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5E91D424AFF00A1CD0A /* King.swift */; };
 		B73DE5F31D424AFF00A1CD0A /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5EA1D424AFF00A1CD0A /* Knight.swift */; };
@@ -51,6 +53,8 @@
 		A510AFE872A88F77F864A3A0 /* Pods-chessTest2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chessTest2.release.xcconfig"; path = "Pods/Target Support Files/Pods-chessTest2/Pods-chessTest2.release.xcconfig"; sourceTree = "<group>"; };
 		B72FD8631D4370D500291F7D /* TableTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTask.swift; sourceTree = "<group>"; };
 		B72FD8651D4372F600291F7D /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
+		B72FD8691D43752300291F7D /* ProblemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemViewController.swift; sourceTree = "<group>"; };
+		B72FD86B1D43882C00291F7D /* Problems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problems.swift; sourceTree = "<group>"; };
 		B73DE5E81D424AFF00A1CD0A /* Bishop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bishop.swift; sourceTree = "<group>"; };
 		B73DE5E91D424AFF00A1CD0A /* King.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = King.swift; sourceTree = "<group>"; };
 		B73DE5EA1D424AFF00A1CD0A /* Knight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				B7FFB65E1D359603003C148B /* Lesson.swift */,
 				B72FD8631D4370D500291F7D /* TableTask.swift */,
 				B72FD8651D4372F600291F7D /* Problem.swift */,
+				B72FD86B1D43882C00291F7D /* Problems.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				B7A9635B1D38AA9700561A50 /* WeightLessonViewController.swift */,
 				B7A9635D1D38BF9A00561A50 /* PiecesWeightViewController.swift */,
 				B7A9635F1D38C05900561A50 /* WeightViewController.swift */,
+				B72FD8691D43752300291F7D /* ProblemViewController.swift */,
 			);
 			name = viewControllers;
 			sourceTree = "<group>";
@@ -345,12 +351,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B73DE5F91D424AFF00A1CD0A /* Rock.swift in Sources */,
+				B72FD86C1D43882C00291F7D /* Problems.swift in Sources */,
 				B7A963621D38C14700561A50 /* MyView2.swift in Sources */,
 				B7A963641D38FBC800561A50 /* CustomPoneView.swift in Sources */,
 				B72FD8641D4370D500291F7D /* TableTask.swift in Sources */,
 				B73DE5F21D424AFF00A1CD0A /* King.swift in Sources */,
 				B7FFB6411D357A4F003C148B /* ContentViewController.swift in Sources */,
 				B73DE5F31D424AFF00A1CD0A /* Knight.swift in Sources */,
+				B72FD86A1D43752300291F7D /* ProblemViewController.swift in Sources */,
 				B7F95DD81D381DE7002D16CB /* MenuTableViewController.swift in Sources */,
 				B7FFB63F1D3572FB003C148B /* LessonViewController.swift in Sources */,
 				B73DE5F61D424AFF00A1CD0A /* Pieces.swift in Sources */,

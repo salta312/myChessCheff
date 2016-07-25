@@ -29,7 +29,7 @@ class WeightViewController: UIViewController {
         button.setImage(self.resizeImage(UIImage(named: "export3")!, targetSize: CGSize(width: CGFloat(30), height: CGFloat(30))), forState: .Normal)
         button.addTarget(self, action: #selector(WeightViewController.next(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
-        print("I added button")
+      //  print("I added button")
         return button
     }()
     lazy var button1: UIButton = {
@@ -53,7 +53,7 @@ class WeightViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func draw(){
-        print("I am drawing it")
+ //       print("I am drawing it")
 //        var myImage: UIImage = UIImage(named: "original")
 //        if lesson.pieces[0].name == "queen"{
 //            
@@ -199,11 +199,11 @@ class WeightViewController: UIViewController {
     }
     
     func next(sender: UIButton) {
-        print("I am shocked")
+      //  print("I am shocked")
         prot.next(currentNum)
     }
     func previous(sender: UIButton){
-        print("I am also shocked")
+     //   print("I am also shocked")
         prot.previous(currentNum)
     }
     

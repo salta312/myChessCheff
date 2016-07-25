@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 protocol MenuTableViewControllerDelegate {
     func didSelectViewController(vc: UIViewController)
@@ -14,14 +15,18 @@ protocol MenuTableViewControllerDelegate {
 
 class MenuTableViewController: UITableViewController {
     var arr = [String]()
+    var problems = [Problems]()
     var delegate: MenuTableViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
       //  self.tableView.registerClass(<#T##cellClass: AnyClass?##AnyClass?#>, forCellReuseIdentifier: <#T##String#>)
         tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
+       // var task = TableTask()
         arr.append("Lesson 1")
         arr.append("Lesson 2")
+        arr.append("Problems")
+       // task.lessons =
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -49,7 +54,7 @@ class MenuTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("I am calling you")
+       // print("I am calling you")
         //let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
      //   let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "reuseIdentifier") as! MyTableViewCell
        // let cell : MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! MyTableViewCell
@@ -57,7 +62,7 @@ class MenuTableViewController: UITableViewController {
         let cell = MyTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "reuseIdentifier")
         //let cell = UITableViewCell(
         cell.textLabel!.text = self.arr[indexPath.row]
-        print(self.arr[indexPath.row])
+        //print(self.arr[indexPath.row])
 
         // Configure the cell...
 
@@ -73,7 +78,50 @@ class MenuTableViewController: UITableViewController {
             let vc: WeightLessonViewController = WeightLessonViewController()
             delegate?.didSelectViewController(vc)
 //            self.presentViewController(vc, animated: true, completion: nil)
+        }else if indexPath.row == 2{
+            SVProgressHUD.show()
+            loadProblemsAssync()
+            
+            
+            
         }
+    }
+    //MARK: -Backendless
+    //what should you do if there is no internet connection
+    func loadProblemsAssync(){
+        let dataStore = Backendless.sharedInstance().data.of(Problems.ofClass())
+        dataStore.find(
+            { (result: BackendlessCollection!) -> Void in
+                //     print("I am here")
+                let probs = result.getCurrentPage()
+                //     print(cities)
+                for obj in probs {
+                    //print(obj)
+                    let prob=obj as! Problems
+                    // print(city.title)
+                    self.problems.append(prob)
+                      //print(prob.composition)
+                }
+                let vc = ProblemViewController()
+                vc.problems = self.problems
+                SVProgressHUD.dismiss()
+                self.delegate?.didSelectViewController(vc)
+                
+                //self.tableView.reloadData()
+            },
+            error: { (fault: Fault!) -> Void in
+                print("Server reported an error: \(fault)")
+                SVProgressHUD.dismiss()
+                self.callAlert("Server reported an error: \(fault)")
+                
+        })
+        
+    }
+    func callAlert(message:String!){
+        let alertController=UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let OKButton=UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(OKButton)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
 

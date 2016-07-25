@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ENSwiftSideMenu/ENSwiftSideMenu.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KFSwiftImageLoader/KFSwiftImageLoader.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Navajo-Swift/Navajo_Swift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SideMenu/SideMenu.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -95,5 +96,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ENSwiftSideMenu/ENSwiftSideMenu.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KFSwiftImageLoader/KFSwiftImageLoader.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Navajo-Swift/Navajo_Swift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SideMenu/SideMenu.framework"
 fi

@@ -5,6 +5,7 @@ PODS:
   - KFSwiftImageLoader (2.0.1)
   - Navajo-Swift (0.0.6)
   - SideMenu (1.1.7)
+  - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
   - Backendless
@@ -13,15 +14,21 @@ DEPENDENCIES:
   - KFSwiftImageLoader (~> 2.0)
   - Navajo-Swift
   - SideMenu
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
 
 EXTERNAL SOURCES:
   Cartography:
     :git: https://github.com/robb/Cartography
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 CHECKOUT OPTIONS:
   Cartography:
     :commit: 114a314ce43ff68255c16a70e4c53824c9ecd539
     :git: https://github.com/robb/Cartography
+  SVProgressHUD:
+    :commit: 6ca5946638ed5bbf8ae36e3c3191901f76bf173b
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
   Backendless: 565a82d9aa6ec01257e904e0a5c0146ffdb503ed
@@ -30,7 +37,8 @@ SPEC CHECKSUMS:
   KFSwiftImageLoader: a2b8a33a89116c767e7af8d2c109e8c483037b19
   Navajo-Swift: 3d7b1fe27e0db8052bb09b92043e1cfbd0513772
   SideMenu: 7b420772e1aa7a2b3a0b0e191566e7e8e0868f53
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: c210840adef733221e1e1cd815e0c4e0df013e60
+PODFILE CHECKSUM: 77cbd572d74aa980d3ec7035e39a885ff7ab19d9
 
 COCOAPODS: 1.0.1

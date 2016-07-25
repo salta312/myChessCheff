@@ -8,6 +8,6 @@
 
 import Foundation
 class TableTask: NSObject{
-    var lessons=[Lesson]()
+    var lessons=[String]()
     var problems=[Problem]()
 }
