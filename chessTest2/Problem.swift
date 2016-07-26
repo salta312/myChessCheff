@@ -8,5 +8,6 @@
 
 import Foundation
 class Problem:NSObject{
+    var pieces = [Piece]()
     
 }
