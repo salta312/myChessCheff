@@ -117,11 +117,16 @@ class ProblemViewController: UIViewController {
                     initPos = 56
                 }
                 let mp = Pone(color: color, initPos: board[initPos], currentPos: board[Int(onePiece[1])!])
-                mp.possibleMoves = mp.detectMoves()
+                //mp.possibleMoves = mp.detectMoves()
                 myPiece = mp
                 
             }
             p.pieces.append(myPiece)
+            if p.pieces.count - 1 >= 0{
+                for index in 0...p.pieces.count - 1{
+                p.pieces[index].possibleMoves = p.pieces[index].detectMoves()
+                }
+            }
             let v = MyView2()
             v.problem = p
             // this is current solution not the best one I must admit

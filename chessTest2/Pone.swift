@@ -28,7 +28,7 @@ class Pone: Piece{
             self.img = self.resizeImage(UIImage(named: "bpone")!, targetSize: CGSize(width: CGFloat(initPos.width), height: CGFloat(initPos.height)))
             self.initPict = UIImage(named: "bpone")!
         }
-        //self.possibleMoves = self.detectMoves()
+        self.possibleMoves = self.detectMoves()
     }
     override func detectMoves()->[Move]{
         var possibleMoves=[Move]()
@@ -47,8 +47,13 @@ class Pone: Piece{
     
     
     func diagon(cell: Cell)-> [Cell]{
+        var cells = [Cell]()
+        //add atacking
+        //increase amount of moves made
         //logic for whites
+        //print(self.color)
         if self.color == UIColor.whiteColor(){
+            print("I am white")
             //moves one
             
             if cell.parrent2 != nil && cell.parrent2.taken == nil{
@@ -62,6 +67,8 @@ class Pone: Piece{
                     }
                     
                 }
+                
+                //self.movesMade++
             }
             
             //attacking diagonally
@@ -75,6 +82,7 @@ class Pone: Piece{
             
         }else{
             // moves one
+            print("I am black")
             if cell.child2 != nil && cell.child2.taken == nil{
                 cells.append(cell.child2)
                 

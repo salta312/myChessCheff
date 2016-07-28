@@ -30,7 +30,6 @@ class MyView2: UIView {
                     tempId = tempHeight*8+tempWidth
                 if tempId >= 0 && tempId <= 63{
                     tapNumber += 1
-                    print(tapNumber)
                     self.setNeedsDisplay()
 
                 }
@@ -43,6 +42,7 @@ class MyView2: UIView {
     }
     
     func isPossibleMove(previousTap: Int!, tempId: Int!) ->Bool{
+        print("------------\(previousTap)------------------")
         var moves: [Move]?
         var posibleMoves = [Cell]()
         if tempId >= 0 && tempId <= 63{
@@ -56,6 +56,7 @@ class MyView2: UIView {
                         posibleMoves = m[index].possibleMoves
                         if posibleMoves.count - 1 >= 0{
                             for index1 in 0...posibleMoves.count - 1{
+                                print(posibleMoves[index1].id)
                                 if posibleMoves[index1].id == tempId{
                                     return true
                                 }
@@ -106,13 +107,9 @@ class MyView2: UIView {
                     CGContextSetFillColorWithColor(context, UIColor(red: 194/255, green: 194/255, blue: 194/255, alpha: 1).CGColor)
                 }
             if tapNumber == 1{
-                print("tempId=\(tempId) index=\(index)")
-                if tempId != nil && tempId == index && arr[index].taken == nil{
-                    tapNumber = 0
-                }
             
-               else if tempId != nil && tempId == index && arr[index].taken != nil{
-                    print("I am here")
+                if tempId != nil && tempId == index{
+                    if arr[index].taken != nil{
                // if tempId != nil && arr[tempId].taken != nil{
 
                     if (problems.move == "white" && arr[index].taken.color == UIColor.whiteColor()) || (problems.move == "black" && arr[index].taken.color == UIColor.blackColor()){
@@ -124,21 +121,32 @@ class MyView2: UIView {
 //                    }else{
 //                        tapNumber = 0
 //                    }
+                    }else{
+                        previousTap = nil
+                        tapNumber = 0
+                    }
                 }
             }else if tapNumber >= 2{
                 tapNumber = 0
                 if tempId != nil && previousTap != nil{
-                    
                     if self.isPossibleMove(previousTap, tempId: tempId){
                        // var p = arr[previousTap].taken.currentPos = arr[tempId]
-                        var p = arr[previousTap].taken
-                        p.currentPos = arr[tempId]
-                        arr[tempId].taken = p
-                        p.possibleMoves = p.detectMoves()
-                        arr[previousTap].taken = nil
-                        previousTap = tempId
+                        if arr[tempId].taken != nil{
+                            if arr[previousTap].taken.color != arr[tempId].taken.color{
+                                
+                            }
+                            
+                        }else{
+                            let p = arr[previousTap].taken
+                            p.currentPos = arr[tempId]
+                            arr[tempId].taken = p
+                            arr[previousTap].taken = nil
+                            p.possibleMoves = p.detectMoves()
+                            previousTap = tempId
+                        }
                         
                     }else{
+                        //print("previousTap= \(previousTap) tempId = \(tempId)")
                         print("no")
                     }
                 }
