@@ -14,8 +14,6 @@ class MyView1: UIView {
     func setSize(){
        // Cell.Sheight = Float(self.frame.size.height/8)
        // Cell.SWidth = Float(self.frame.size.width/8)
-     //   print("I am view My size is \(self.frame.size.height)")
-     //   print("I am view My size is \(self.frame.size.width)")
 
     }
 
@@ -44,8 +42,6 @@ class MyView1: UIView {
             if lesson.pieces.count > 0{
                 for i in 0 ... lesson.pieces.count-1{
                     let piece = lesson.pieces[i]
-                  //  print(piece.name)
-                  //  print(piece.currentPos.id)
                     _=CGSize(width: CGFloat(arr[0].width), height: CGFloat(arr[0].height))
                     let location = CGPoint(x:CGFloat(piece.currentPos.x), y: CGFloat(piece.currentPos.y))
                     piece.img.drawAtPoint(location)
@@ -58,7 +54,6 @@ class MyView1: UIView {
                             var cells=moves[index].possibleMoves
                             if(cells.count>0){
                                 for ind in 0...cells.count-1{
-                                  //  print(cells[ind].id)
                                     // CGRectMa
                                     let rect = CGRectMake(CGFloat(cells[ind].x+arr[0].width/2), CGFloat(cells[ind].y+arr[0].height/2), CGFloat(arr[0].width/7), CGFloat(arr[0].height/7))
                                     CGContextAddRect(context, rect)

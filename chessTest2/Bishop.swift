@@ -30,7 +30,7 @@ class Bishop: Piece{
         }
         self.possibleMoves = self.detectMoves()
     }
-    func detectMoves()->[Move]{
+    override func detectMoves()->[Move]{
         var possibleMoves=[Move]()
         for index in 1...4{
             let m=Move()

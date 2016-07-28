@@ -19,7 +19,6 @@ class Piece:NSObject{
     var img:UIImage!
     var weight:Int!
     func resizeImage(image:UIImage, targetSize: CGSize) -> UIImage{
-       // print( self.name)
         let size=image.size
         let widthRatio=targetSize.width / image.size.width
         let heightRatio=targetSize.height/image.size.height
@@ -37,4 +36,10 @@ class Piece:NSObject{
         
         return newImage
     }
+    func detectMoves()->[Move]{
+        var possibleMoves=[Move]()
+        return possibleMoves
+        
+    }
+    
 }

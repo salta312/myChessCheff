@@ -20,7 +20,6 @@ class Pone: Piece{
         self.currentPos=currentPos
         self.name=Pieces.pone
         self.board[currentPos.id].taken = self
-       // print("color: \(color) currentPos.id: \(currentPos.id)")
        // self.movesMade = movesMade
         if color == UIColor.whiteColor(){
             self.img = self.resizeImage(UIImage(named: "wpone")!, targetSize: CGSize(width: CGFloat(initPos.width), height: CGFloat(initPos.height)))
@@ -31,7 +30,7 @@ class Pone: Piece{
         }
         //self.possibleMoves = self.detectMoves()
     }
-    func detectMoves()->[Move]{
+    override func detectMoves()->[Move]{
         var possibleMoves=[Move]()
         for _ in 1...1{
             let m=Move()
@@ -68,10 +67,8 @@ class Pone: Piece{
             //attacking diagonally
             if cell.parrent2 != nil{
                 if cell.parrent2.parent1 != nil && cell.parrent2.parent1.taken != nil && cell.parrent2.parent1.taken.color != self.color {
-                   // print("I am doing it")
                     cells.append(cell.parrent2.parent1)
                 }else if cell.parrent2.child1 != nil && cell.parrent2.child1.taken != nil && cell.parrent2.child1.taken.color != self.color {
-                  //  print("I am doing it")
                     cells.append(cell.parrent2.child1)
                 }
             }
@@ -93,10 +90,8 @@ class Pone: Piece{
             
             if cell.child2 != nil{
                 if cell.child2.parent1 != nil && cell.child2.parent1.taken != nil && cell.child2.parent1.taken.color != self.color{
-                  //  print("I am doing it")
                     cells.append(cell.child2.parent1)
                 } else if (cell.child2.child1 != nil && cell.child2.child1.taken != nil && cell.child2.child1.taken.color != self.color){
-                   // print("I am doing it")
                     
                     cells.append(cell.child2.child1)
                 }

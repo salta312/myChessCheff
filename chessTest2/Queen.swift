@@ -28,7 +28,7 @@ class Queen: Piece{
         }
         self.possibleMoves = self.detectMoves()
     }
-    func detectMoves()->[Move]{
+    override func detectMoves()->[Move]{
         var possibleMoves=[Move]()
         for index in 1...8{
             let m=Move()

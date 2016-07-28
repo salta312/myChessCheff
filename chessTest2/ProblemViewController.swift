@@ -44,7 +44,6 @@ class ProblemViewController: UIViewController {
         for index in 0...piecesArr1.count-1{
             //print(piecesArr1[index])
             let onePiece = piecesArr1[index].componentsSeparatedByString(" ")
-            print(onePiece[0])
             guard let col = onePiece[0].characters.last else{
                 return
             }
@@ -125,6 +124,8 @@ class ProblemViewController: UIViewController {
             p.pieces.append(myPiece)
             let v = MyView2()
             v.problem = p
+            // this is current solution not the best one I must admit
+            v.problems = problems[0]
             view.addSubview(v)
             constrain(view, v){
                 view, v in
