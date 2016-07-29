@@ -112,5 +112,11 @@ class King: Piece{
         }
         return cells
     }
+    func isCheck() -> Bool{
+        if (self.color == UIColor.whiteColor() && self.currentPos.bAttacked == true) || (self.color == UIColor.blackColor() && self.currentPos.wAttacked == true){
+            return true
+        }
+        return false
+    }
     
 }

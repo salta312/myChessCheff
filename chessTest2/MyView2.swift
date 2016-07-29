@@ -17,6 +17,9 @@ class MyView2: UIView {
     var tapNumber = 0
     var moves: [Move]?
     var previousTap: Int!
+    var kings:[King]!
+    var mainKing:King!
+    var move:String!
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
         let touch = touches.first
@@ -38,7 +41,13 @@ class MyView2: UIView {
             }
 
         }
+
        // touches.
+        if mainKing.color == UIColor.whiteColor(){
+            print("I am a white king")
+        }else{
+            print("I am a black king")
+        }
     }
     
     func isPossibleMove(previousTap: Int!, tempId: Int!) ->Bool{
@@ -86,6 +95,7 @@ class MyView2: UIView {
     
     override func drawRect(rect: CGRect) {
         self.setSize()
+        print(mainKing)
        // let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tapped"))
        // tapGesture.numberOfTapsRequired = 1
        // self.addGestureRecognizer(tapGesture)
@@ -110,6 +120,7 @@ class MyView2: UIView {
                // CGContextFillPath(context)
 
                 }
+            
 
             if tapNumber == 1{
             
@@ -141,7 +152,6 @@ class MyView2: UIView {
                         if arr[tempId].taken != nil{
                             //takes everything appart from king
                             if arr[previousTap].taken.color != arr[tempId].taken.color && arr[tempId].taken.name != Pieces.king{
-                                print("yes I am not a king")
                                 let p = arr[previousTap].taken
                                // let prev = arr[tempId].taken
                                 p.currentPos = arr[tempId]
@@ -171,10 +181,10 @@ class MyView2: UIView {
                 }
                 
             }
+            //till here
             CGContextFillPath(context)
 
             if arr[index].taken != nil{
-                print("I am here")
                 let p1 = arr[index].taken
                 _=CGSize(width: CGFloat(arr[0].width), height: CGFloat(arr[0].height))
                 let location = CGPoint(x:CGFloat(p1.currentPos.x), y: CGFloat(p1.currentPos.y))

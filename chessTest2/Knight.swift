@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class Knight: Piece{
     var board:[Cell]!
+    
     init(color:UIColor, initPos: Cell, currentPos: Cell){
         super.init()
         self.weight = 3
@@ -39,12 +40,7 @@ class Knight: Piece{
         return possibleMoves
         
     }
-    func isCheck() -> Bool{
-        if (self.color == UIColor.whiteColor() && self.currentPos.bAttacked == true) || (self.color == UIColor.blackColor() && self.currentPos.wAttacked == true){
-            return true
-        }
-        return false
-    }
+
     var cells = [Cell]()
     
     func diagon(cell: Cell, iter: Int, caseNum: Int)-> [Cell]{

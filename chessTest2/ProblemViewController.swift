@@ -36,17 +36,20 @@ class ProblemViewController: UIViewController {
             return
         }
         let tempString = problems[index].composition
+        let move = problems[index].move
        // let piecesArr = split(tempString){$0 == ", "}
         let piecesArr = tempString?.componentsSeparatedByString(", ")
         guard let piecesArr1 = piecesArr else{
             return
         }
+        let v = MyView2()
         for index in 0...piecesArr1.count-1{
             //print(piecesArr1[index])
             let onePiece = piecesArr1[index].componentsSeparatedByString(" ")
             guard let col = onePiece[0].characters.last else{
                 return
             }
+
 
             let piece = onePiece[0].substringToIndex(onePiece[0].endIndex.predecessor())
             if piece == "King"{
@@ -57,6 +60,7 @@ class ProblemViewController: UIViewController {
                     color = UIColor.blackColor()
                     initPos = 4
                 }
+                
                 //let currentPos = onePiece[1]
                 
 //                guard let curretPos = onePiece[1] else{
@@ -68,6 +72,18 @@ class ProblemViewController: UIViewController {
                 }
                 
                  myPiece = King(color: color, initPos: board[initPos], currentPos: board[Int(onePiece[1])!], movesMade: movesMade)
+                if myPiece.color == UIColor.whiteColor() && move == "white"{
+                    print("white king")
+                    v.mainKing = myPiece as! King
+                    print(v.mainKing.color)
+                }else if myPiece.color == UIColor.blackColor() && move == "black"{
+                    print("black king")
+                    v.mainKing = myPiece as! King
+                    print(v.mainKing.color)
+
+                }
+                
+               // v.mainKing = myPiece as! King
                // p.pieces.append(myPiece)
             }else if piece == "Q"{
                 if col == "1"{
@@ -127,22 +143,18 @@ class ProblemViewController: UIViewController {
                 p.pieces[index].possibleMoves = p.pieces[index].detectMoves()
                 }
             }
-            let v = MyView2()
-            v.problem = p
-            // this is current solution not the best one I must admit
-            v.problems = problems[0]
-            view.addSubview(v)
-            constrain(view, v){
-                view, v in
-                v.height == view.height - 64
-                v.width == view.width
-                v.top == view.top + 64
-                v.centerX == view.centerX
-            }
-            
-            
-            
-            
+
+        }
+        v.problem = p
+        // this is current solution not the best one I must admit
+        v.problems = problems[0]
+        view.addSubview(v)
+        constrain(view, v){
+            view, v in
+            v.height == view.height - 64
+            v.width == view.width
+            v.top == view.top + 64
+            v.centerX == view.centerX
         }
         
     }
