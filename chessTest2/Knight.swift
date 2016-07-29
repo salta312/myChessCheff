@@ -39,6 +39,12 @@ class Knight: Piece{
         return possibleMoves
         
     }
+    func isCheck() -> Bool{
+        if (self.color == UIColor.whiteColor() && self.currentPos.bAttacked == true) || (self.color == UIColor.blackColor() && self.currentPos.wAttacked == true){
+            return true
+        }
+        return false
+    }
     var cells = [Cell]()
     
     func diagon(cell: Cell, iter: Int, caseNum: Int)-> [Cell]{
