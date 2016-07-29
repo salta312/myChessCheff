@@ -103,9 +103,14 @@ class MyView2: UIView {
 
                if col == UIColor.brownColor(){
                     CGContextSetFillColorWithColor(context, UIColor(red: 226/255, green: 204/255, blue: 171/255, alpha: 1).CGColor)
+               // CGContextFillPath(context)
+
                 }else{
                     CGContextSetFillColorWithColor(context, UIColor(red: 194/255, green: 194/255, blue: 194/255, alpha: 1).CGColor)
+               // CGContextFillPath(context)
+
                 }
+
             if tapNumber == 1{
             
                 if tempId != nil && tempId == index{
@@ -116,6 +121,8 @@ class MyView2: UIView {
                         previousTap = index
                     
                         CGContextSetFillColorWithColor(context, UIColor.redColor().CGColor)
+                        CGContextFillPath(context)
+
                     }
                     //add a line of code when the user chose an empty cell
 //                    }else{
@@ -164,24 +171,37 @@ class MyView2: UIView {
                 }
                 
             }
-                CGContextFillPath(context)
+            CGContextFillPath(context)
+
+            if arr[index].taken != nil{
+                print("I am here")
+                let p1 = arr[index].taken
+                _=CGSize(width: CGFloat(arr[0].width), height: CGFloat(arr[0].height))
+                let location = CGPoint(x:CGFloat(p1.currentPos.x), y: CGFloat(p1.currentPos.y))
+                p1.img.drawAtPoint(location)
+              //  CGContextFillPath(context)
+                 CGContextFillPath(context)
+                
+                //print()
+            }
+           //     CGContextFillPath(context)
                
          //   }
 
 
             
         }
-        if problem != nil{
-            if problem.pieces.count > 0{
-                for i in 0 ... problem.pieces.count-1{
-                    let piece = problem.pieces[i]
-                    _=CGSize(width: CGFloat(arr[0].width), height: CGFloat(arr[0].height))
-                    let location = CGPoint(x:CGFloat(piece.currentPos.x), y: CGFloat(piece.currentPos.y))
-                    piece.img.drawAtPoint(location)
-                    
-                }
-            }
-        }
+//        if problem != nil{
+//            if problem.pieces.count > 0{
+//                for i in 0 ... problem.pieces.count-1{
+//                    let piece = problem.pieces[i]
+//                    _=CGSize(width: CGFloat(arr[0].width), height: CGFloat(arr[0].height))
+//                    let location = CGPoint(x:CGFloat(piece.currentPos.x), y: CGFloat(piece.currentPos.y))
+//                    piece.img.drawAtPoint(location)
+//                    
+//                }
+//            }
+//        }
         
     }
 
