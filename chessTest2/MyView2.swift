@@ -42,7 +42,7 @@ class MyView2: UIView {
     }
     
     func isPossibleMove(previousTap: Int!, tempId: Int!) ->Bool{
-        print("------------\(previousTap)------------------")
+       // print("------------\(previousTap)------------------")
         var moves: [Move]?
         var posibleMoves = [Cell]()
         if tempId >= 0 && tempId <= 63{
@@ -56,7 +56,7 @@ class MyView2: UIView {
                         posibleMoves = m[index].possibleMoves
                         if posibleMoves.count - 1 >= 0{
                             for index1 in 0...posibleMoves.count - 1{
-                                print(posibleMoves[index1].id)
+                               // print(posibleMoves[index1].id)
                                 if posibleMoves[index1].id == tempId{
                                     return true
                                 }
@@ -132,7 +132,19 @@ class MyView2: UIView {
                     if self.isPossibleMove(previousTap, tempId: tempId){
                        // var p = arr[previousTap].taken.currentPos = arr[tempId]
                         if arr[tempId].taken != nil{
-                            if arr[previousTap].taken.color != arr[tempId].taken.color{
+                            //takes everything appart from king
+                            if arr[previousTap].taken.color != arr[tempId].taken.color && arr[tempId].taken.name != Pieces.king{
+                                print("yes I am not a king")
+                                let p = arr[previousTap].taken
+                               // let prev = arr[tempId].taken
+                                p.currentPos = arr[tempId]
+                                arr[previousTap].taken = nil
+                                arr[tempId].taken = nil
+                                arr[tempId].taken = p
+                                p.possibleMoves = p.detectMoves()
+                                
+                                
+                                
                                 
                             }
                             

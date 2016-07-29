@@ -53,7 +53,7 @@ class Pone: Piece{
         //logic for whites
         //print(self.color)
         if self.color == UIColor.whiteColor(){
-            print("I am white")
+           // print("I am white")
             //moves one
             
             if cell.parrent2 != nil && cell.parrent2.taken == nil{
@@ -73,16 +73,24 @@ class Pone: Piece{
             
             //attacking diagonally
             if cell.parrent2 != nil{
-                if cell.parrent2.parent1 != nil && cell.parrent2.parent1.taken != nil && cell.parrent2.parent1.taken.color != self.color {
+                if cell.parrent2.parent1 != nil{
+                    cell.parrent2.parent1.wAttacked = true
+                if cell.parrent2.parent1.taken != nil && cell.parrent2.parent1.taken.color != self.color {
                     cells.append(cell.parrent2.parent1)
-                }else if cell.parrent2.child1 != nil && cell.parrent2.child1.taken != nil && cell.parrent2.child1.taken.color != self.color {
+                    }
+                }
+                if cell.parrent2.child1 != nil {
+                    cell.parrent2.child1.wAttacked = true
+                    if cell.parrent2.child1.taken != nil && cell.parrent2.child1.taken.color != self.color {
                     cells.append(cell.parrent2.child1)
                 }
+                }
+                
             }
             
         }else{
             // moves one
-            print("I am black")
+           // print("I am black")
             if cell.child2 != nil && cell.child2.taken == nil{
                 cells.append(cell.child2)
                 
@@ -97,15 +105,21 @@ class Pone: Piece{
             // atacking diagonally
             
             if cell.child2 != nil{
-                if cell.child2.parent1 != nil && cell.child2.parent1.taken != nil && cell.child2.parent1.taken.color != self.color{
-                    cells.append(cell.child2.parent1)
-                } else if (cell.child2.child1 != nil && cell.child2.child1.taken != nil && cell.child2.child1.taken.color != self.color){
+                if cell.child2.parent1 != nil {
+                    cell.child2.parent1.bAttacked = true
+                    if cell.child2.parent1.taken != nil && cell.child2.parent1.taken.color != self.color{
+                        cells.append(cell.child2.parent1)
+                    }
+                }
+                if cell.child2.child1 != nil{
+                    cell.child2.child1.bAttacked = true
+                    if cell.child2.child1.taken != nil && cell.child2.child1.taken.color != self.color{
                     
-                    cells.append(cell.child2.child1)
+                        cells.append(cell.child2.child1)
+                    }
                 }
                 
             }
-            
             
         }
         
