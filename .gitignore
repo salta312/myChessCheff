@@ -1,0 +1,5 @@
+*.cer
+*.certSigningRequest
+*.p12
+./Pods
+Preview.html
