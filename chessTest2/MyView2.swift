@@ -20,6 +20,7 @@ class MyView2: UIView {
     var kings:[King]!
     var mainKing:King!
     var move:String!
+    var myProtocol: ProblemVCProtocol!
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
         let touch = touches.first
@@ -31,6 +32,11 @@ class MyView2: UIView {
                     tempHeight = (Int((Float(touch1.locationInView(self).y) - arr[0].y)/arr[0].height))
                     tempWidth = (Int((Float(touch1.locationInView(self).x) - arr[0].x)/arr[0].width))
                     tempId = tempHeight*8+tempWidth
+                if mainKing.isCheck() && tempId != mainKing.currentPos{
+                    myProtocol.showAlert("check")
+                   // showAlert("Check")
+                    return
+                }
                 if tempId >= 0 && tempId <= 63{
                     tapNumber += 1
                     self.setNeedsDisplay()
@@ -127,12 +133,14 @@ class MyView2: UIView {
                 if tempId != nil && tempId == index{
                     if arr[index].taken != nil{
                // if tempId != nil && arr[tempId].taken != nil{
+                        //commenting out temporary to see
 
                     if (problems.move == "white" && arr[index].taken.color == UIColor.whiteColor()) || (problems.move == "black" && arr[index].taken.color == UIColor.blackColor()){
                         previousTap = index
                     
                         CGContextSetFillColorWithColor(context, UIColor.redColor().CGColor)
                         CGContextFillPath(context)
+                        // till here
 
                     }
                     //add a line of code when the user chose an empty cell

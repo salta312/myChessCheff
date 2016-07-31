@@ -9,7 +9,11 @@
 import UIKit
 import Cartography
 
-class ProblemViewController: UIViewController {
+protocol ProblemVCProtocol{
+    func showAlert(message:String)
+}
+
+class ProblemViewController: UIViewController, ProblemVCProtocol {
     var board = Board.board
     var problems: [Problems]!
     var index = 0
@@ -24,6 +28,13 @@ class ProblemViewController: UIViewController {
         
 
         // Do any additional setup after loading the view.
+    }
+    func showAlert(message:String){
+        let alertController=UIAlertController(title: "Check", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let OKButton=UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(OKButton)
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
     }
     func setAPosition(){
         let p = Problem()
@@ -43,6 +54,7 @@ class ProblemViewController: UIViewController {
             return
         }
         let v = MyView2()
+        v.myProtocol = self
         for index in 0...piecesArr1.count-1{
             //print(piecesArr1[index])
             let onePiece = piecesArr1[index].componentsSeparatedByString(" ")
