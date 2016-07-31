@@ -104,6 +104,7 @@ class MyView2: UIView {
     override func drawRect(rect: CGRect) {
         self.setSize()
         print(mainKing)
+        print("I am drawing")
        // let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tapped"))
        // tapGesture.numberOfTapsRequired = 1
        // self.addGestureRecognizer(tapGesture)

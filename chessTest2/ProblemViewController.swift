@@ -37,12 +37,14 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
         
     }
     func setAPosition(){
+        //print(index)
         let p = Problem()
         var color: UIColor!
         var initPos: Int!
         var movesMade = 0
         var myPiece: Piece!
         Board.cleanABoard()
+        //print(problems.count)
         if index >= problems.count {
             return
         }
@@ -53,9 +55,12 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
         guard let piecesArr1 = piecesArr else{
             return
         }
+        print(piecesArr1 )
         let v = MyView2()
         v.myProtocol = self
         for index in 0...piecesArr1.count-1{
+            print(piecesArr1[index])
+            
             //print(piecesArr1[index])
             let onePiece = piecesArr1[index].componentsSeparatedByString(" ")
             guard let col = onePiece[0].characters.last else{
@@ -159,15 +164,34 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
         }
         v.problem = p
         // this is current solution not the best one I must admit
-        v.problems = problems[0]
+        v.problems = problems[index]
+        let button: UIButton = {
+            let button = UIButton()
+            button.setTitle("next", forState: .Normal)
+            button.addTarget(self, action: #selector(buttonPressed), forControlEvents: .TouchUpInside)
+            return button
+        }()
         view.addSubview(v)
-        constrain(view, v){
-            view, v in
-            v.height == view.height - 64
+        view.addSubview(button)
+        constrain(view, v, button){
+            view, v, button in
+            v.height == view.height - 164
             v.width == view.width
             v.top == view.top + 64
             v.centerX == view.centerX
+            button.top == v.bottom + 10
+            button.centerX == v.centerX
+            button.height == 30
+            
+            
         }
+        
+    }
+    func buttonPressed(sender: UIButton){
+       // print("yes you pressed me")
+        //
+       index += 1
+       setAPosition()
         
     }
 
