@@ -8,6 +8,7 @@
 
 import UIKit
 import Cartography
+import ENSwiftSideMenu
 
 protocol ProblemVCProtocol{
     func showAlert(message:String)
@@ -21,6 +22,16 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         //view.backgroundColor = UIColor.redColor()
+        /*
+         not quit sure how to add navigation
+    */
+        //possibly like this
+        let leftBarButtonItem = UIBarButtonItem()
+        leftBarButtonItem.title = "Menu"
+        leftBarButtonItem.target = self
+        leftBarButtonItem.action = #selector(barButtonItemClicked(_:))
+        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+        //ending
         Board.cleanABoard()
         //add shuffle
         setAPosition()
@@ -199,6 +210,11 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func barButtonItemClicked(button: UIBarButtonItem){
+        //print("I work")
+        toggleSideMenuView()
+    }
+    
     
 
     /*

@@ -31,6 +31,7 @@ class LessonsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
+        Board.cleanABoard()
 
         let leftBarButtonItem = UIBarButtonItem()
         leftBarButtonItem.title = "Menu"

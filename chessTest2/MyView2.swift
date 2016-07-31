@@ -108,7 +108,7 @@ class MyView2: UIView {
        // let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tapped"))
        // tapGesture.numberOfTapsRequired = 1
        // self.addGestureRecognizer(tapGesture)
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.blackColor()
         let context = UIGraphicsGetCurrentContext()
 
         for index in 0...arr.count-1{

@@ -19,6 +19,7 @@ class MyView1: UIView {
 
     
     override func drawRect(rect: CGRect) {
+       // Board.cleanABoard()
         self.setSize()
         self.backgroundColor = UIColor.whiteColor()
         let context = UIGraphicsGetCurrentContext()
@@ -39,6 +40,7 @@ class MyView1: UIView {
             
         }
         if lesson != nil{
+            
             if lesson.pieces.count > 0{
                 for i in 0 ... lesson.pieces.count-1{
                     let piece = lesson.pieces[i]
