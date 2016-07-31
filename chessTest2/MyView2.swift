@@ -21,6 +21,8 @@ class MyView2: UIView {
     var mainKing:King!
     var move:String!
     var myProtocol: ProblemVCProtocol!
+    var answ:String!
+    var tempClr:String!
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
         let touch = touches.first
@@ -167,7 +169,36 @@ class MyView2: UIView {
                                 arr[tempId].taken = nil
                                 arr[tempId].taken = p
                                 p.possibleMoves = p.detectMoves()
-                                
+                                //to check with an answer
+                                /*
+                                 *
+                                 *need to be changed
+                                */
+                                if problems.move == "white"{
+                                    tempClr = "1"
+                                }else{
+                                    tempClr = "2"
+                                }
+                                if p.name == Pieces.king{
+                                    answ = "King"
+                                    
+                                }else if p.name == Pieces.queen{
+                                    answ = "Q"
+                                }else if p.name == Pieces.rock{
+                                    answ = "R"
+                                }else if p.name == Pieces.bishop{
+                                    answ = "B"
+                                }else if p.name == Pieces.knight{
+                                    answ = "K"
+                                }else {
+                                    answ = "P"
+                                }
+                                answ = answ + tempClr + " " + String(tempId)
+                                checkTheAnswer(answ)
+
+                                /*
+                                 till here
+                                */
                                 
                                 
                                 
@@ -180,13 +211,45 @@ class MyView2: UIView {
                             arr[previousTap].taken = nil
                             p.possibleMoves = p.detectMoves()
                             previousTap = tempId
+                            //to check with an answer
+                            /*
+                             *
+                             *need to be changed
+                             */
+                            if problems.move == "white"{
+                                tempClr = "1"
+                            }else{
+                                tempClr = "2"
+                            }
+                            if p.name == Pieces.king{
+                                answ = "King"
+                                
+                            }else if p.name == Pieces.queen{
+                                answ = "Q"
+                            }else if p.name == Pieces.rock{
+                                answ = "R"
+                            }else if p.name == Pieces.bishop{
+                                answ = "B"
+                            }else if p.name == Pieces.knight{
+                                answ = "K"
+                            }else {
+                                answ = "P"
+                            }
+                            answ = answ + tempClr + " " + String(tempId)
+                            checkTheAnswer(answ)
+                            
+                            /*
+                             till here
+                             */
                         }
+                        
                         
                     }else{
                         //print("previousTap= \(previousTap) tempId = \(tempId)")
                         print("no")
                     }
                 }
+               // checkTheAnswer()
                 
             }
             //till here
@@ -221,6 +284,16 @@ class MyView2: UIView {
 //            }
 //        }
         
+    }
+    func checkTheAnswer(answer:String){
+        // need to change to make if it is wrong to go back to the initial position
+        if answer == problems.answer{
+            myProtocol.showAlert("Correct")
+            return
+        }else{
+            myProtocol.showAlert("You are wrong try again")
+            return
+        }
     }
 
 }
