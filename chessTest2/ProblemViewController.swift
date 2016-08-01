@@ -131,12 +131,12 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
             }else if piece == "P"{
                 if col == "1"{
                     color = UIColor.whiteColor()
-                    initPos = 0
+                 //   initPos = 0
                 }else{
                     color = UIColor.blackColor()
-                    initPos = 56
+                   // initPos = 56
                 }
-                let mp = Pone(color: color, initPos: board[initPos], currentPos: board[Int(onePiece[1])!])
+                let mp = Pone(color: color, currentPos: board[Int(onePiece[1])!])
                 //mp.possibleMoves = mp.detectMoves()
                 myPiece = mp
                 
@@ -156,8 +156,12 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
     }
     
     func buttonPressed(sender: UIButton) {
-       index += 1
-       setAPosition(index)
+        //if index + 1 < problems.count{
+            index += 1
+            setAPosition(index)
+        //}else{
+        //    print("It is maximum")
+       // }
     }
 
     func barButtonItemClicked(button: UIBarButtonItem) {
