@@ -8,6 +8,11 @@
 
 import Foundation
 
-enum Pieces{
-    case king, queen, rock, bishop, knight, pone    
+enum Pieces: String {
+    case king = "King"
+    case queen = "Q"
+    case rock = "R"
+    case bishop = "B"
+    case knight = "K"
+    case pone = "P"
 }

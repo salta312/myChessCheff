@@ -8,6 +8,21 @@
 
 import UIKit
 
+protocol ProblemVCProtocol {
+    func showAlert(message:String)
+    func setAPosition(index: Int)
+    func answerUpdated(answer: String)
+}
+
+extension ProblemVCProtocol where Self: UIViewController {
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Check", message: message,
+                                                preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+}
+
 class MyView2: UIView {
     var problems:Problems!
     var arr=Board.board
@@ -21,8 +36,14 @@ class MyView2: UIView {
     var mainKing:King!
     var move:String!
     var myProtocol: ProblemVCProtocol!
-    var answ:String!
+    var answ:String! {
+        didSet {
+            myProtocol.answerUpdated(answ)
+        }
+    }
     var tempClr:String!
+    var probIndex: Int = 0
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
         let touch = touches.first
@@ -31,30 +52,18 @@ class MyView2: UIView {
         }
         if touch1.locationInView(self).x >= CGFloat(arr[0].x) && touch1.locationInView(self).x <= CGFloat(arr[0].x + 8*arr[0].width){
             if touch1.locationInView(self).y >= CGFloat(arr[0].y) && touch1.locationInView(self).y <= CGFloat(arr[0].y + 8*arr[0].height){
-                    tempHeight = (Int((Float(touch1.locationInView(self).y) - arr[0].y)/arr[0].height))
-                    tempWidth = (Int((Float(touch1.locationInView(self).x) - arr[0].x)/arr[0].width))
-                    tempId = tempHeight*8+tempWidth
-                if mainKing.isCheck() && tempId != mainKing.currentPos{
+                tempHeight = (Int((Float(touch1.locationInView(self).y) - arr[0].y)/arr[0].height))
+                tempWidth = (Int((Float(touch1.locationInView(self).x) - arr[0].x)/arr[0].width))
+                tempId = tempHeight*8+tempWidth
+                
+                if mainKing.isCheck() && tempId != mainKing.currentPos {
                     myProtocol.showAlert("check")
-                   // showAlert("Check")
-                    return
-                }
-                if tempId >= 0 && tempId <= 63{
+                } else if tempId >= 0 && tempId <= 63{
                     tapNumber += 1
-                    self.setNeedsDisplay()
-
+                    setNeedsDisplay()
                 }
-                
-                
             }
 
-        }
-
-       // touches.
-        if mainKing.color == UIColor.whiteColor(){
-            print("I am a white king")
-        }else{
-            print("I am a black king")
         }
     }
     
@@ -93,76 +102,41 @@ class MyView2: UIView {
 
 
     var problem: Problem!
-    // var num: Int!
-    func setSize(){
-        // Cell.Sheight = Float(self.frame.size.height/8)
-        // Cell.SWidth = Float(self.frame.size.width/8)
-        
-    }
-    
     
     override func drawRect(rect: CGRect) {
-        self.setSize()
-        print(mainKing)
-        print("I am drawing")
-       // let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tapped"))
-       // tapGesture.numberOfTapsRequired = 1
-       // self.addGestureRecognizer(tapGesture)
-        self.backgroundColor = UIColor.blackColor()
+        super.drawRect(rect)
+        
+        backgroundColor = UIColor.blackColor()
         let context = UIGraphicsGetCurrentContext()
 
         for index in 0...arr.count-1{
-            //arr[index].x
-            ///var height=arr[index].height
-            //let rectangle=CGRectMake(CGFloat(arr[index].x), CGFloat(arr[index].y), CGFloat(arr[index].height), CGFloat(arr[index].width))
-       //     if tempId == nil || tempId != index{
-                let rectangle = CGRectMake(CGFloat(arr[index].x), CGFloat(arr[index].y), CGFloat(arr[index].width), CGFloat(arr[index].height))
-                CGContextAddRect(context, rectangle)
-                let col=arr[index].color
+            let rectangle = CGRectMake(CGFloat(arr[index].x), CGFloat(arr[index].y), CGFloat(arr[index].width), CGFloat(arr[index].height))
+            CGContextAddRect(context, rectangle)
+            let col = arr[index].color
 
-               if col == UIColor.brownColor(){
-                    CGContextSetFillColorWithColor(context, UIColor(red: 226/255, green: 204/255, blue: 171/255, alpha: 1).CGColor)
-               // CGContextFillPath(context)
-
-                }else{
-                    CGContextSetFillColorWithColor(context, UIColor(red: 194/255, green: 194/255, blue: 194/255, alpha: 1).CGColor)
-               // CGContextFillPath(context)
-
-                }
-            
-
-            if tapNumber == 1{
-            
+            col == UIColor.brownColor()
+                ? CGContextSetFillColorWithColor(context, UIColor(red: 226/255, green: 204/255, blue: 171/255, alpha: 1).CGColor)
+                : CGContextSetFillColorWithColor(context, UIColor(red: 194/255, green: 194/255, blue: 194/255, alpha: 1).CGColor)
+            if tapNumber == 1 {
                 if tempId != nil && tempId == index{
                     if arr[index].taken != nil{
-               // if tempId != nil && arr[tempId].taken != nil{
-                        //commenting out temporary to see
-
-                    if (problems.move == "white" && arr[index].taken.color == UIColor.whiteColor()) || (problems.move == "black" && arr[index].taken.color == UIColor.blackColor()){
-                        previousTap = index
+                        if (problems.move == "white" && arr[index].taken.color == UIColor.whiteColor()) || (problems.move == "black" && arr[index].taken.color == UIColor.blackColor()){
+                            previousTap = index
                     
-                        CGContextSetFillColorWithColor(context, UIColor.redColor().CGColor)
-                        CGContextFillPath(context)
-                        // till here
-
-                    }
-                    //add a line of code when the user chose an empty cell
-//                    }else{
-//                        tapNumber = 0
-//                    }
-                    }else{
+                            CGContextSetFillColorWithColor(context, UIColor.redColor().CGColor)
+                            CGContextFillPath(context)
+                        }
+                    } else {
                         previousTap = nil
                         tapNumber = 0
                     }
                 }
-            }else if tapNumber >= 2{
+            } else if tapNumber >= 2 {
                 tapNumber = 0
                 if tempId != nil && previousTap != nil{
-                    if self.isPossibleMove(previousTap, tempId: tempId){
-                       // var p = arr[previousTap].taken.currentPos = arr[tempId]
+                    if self.isPossibleMove(previousTap, tempId: tempId) {
                         if arr[tempId].taken != nil{
-                            //takes everything appart from king
-                            if arr[previousTap].taken.color != arr[tempId].taken.color && arr[tempId].taken.name != Pieces.king{
+                            if arr[previousTap].taken.color != arr[tempId].taken.color && arr[tempId].taken.name != Pieces.king {
                                 let p = arr[previousTap].taken
                                // let prev = arr[tempId].taken
                                 p.currentPos = arr[tempId]
@@ -170,131 +144,52 @@ class MyView2: UIView {
                                 arr[tempId].taken = nil
                                 arr[tempId].taken = p
                                 p.possibleMoves = p.detectMoves()
-                                //to check with an answer
-                                /*
-                                 *
-                                 *need to be changed
-                                */
-                                if problems.move == "white"{
-                                    tempClr = "1"
-                                }else{
-                                    tempClr = "2"
-                                }
-                                if p.name == Pieces.king{
-                                    answ = "King"
-                                    
-                                }else if p.name == Pieces.queen{
-                                    answ = "Q"
-                                }else if p.name == Pieces.rock{
-                                    answ = "R"
-                                }else if p.name == Pieces.bishop{
-                                    answ = "B"
-                                }else if p.name == Pieces.knight{
-                                    answ = "K"
-                                }else {
-                                    answ = "P"
-                                }
-                                answ = answ + tempClr + " " + String(tempId)
-                                checkTheAnswer(answ)
+                                CGContextFillPath(context)
 
-                                /*
-                                 till here
-                                */
-                                
-                                
-                                
+                                tempClr = problems.move == "white" ? "1" : "2"
+                                answ = p.name.rawValue + tempClr + " " + String(tempId)
                             }
-                            
-                        }else{
+                        } else {
                             let p = arr[previousTap].taken
                             p.currentPos = arr[tempId]
                             arr[tempId].taken = p
                             arr[previousTap].taken = nil
                             p.possibleMoves = p.detectMoves()
                             previousTap = tempId
-                            //to check with an answer
-                            /*
-                             *
-                             *need to be changed
-                             */
-                            if problems.move == "white"{
-                                tempClr = "1"
-                            }else{
-                                tempClr = "2"
-                            }
-                            if p.name == Pieces.king{
-                                answ = "King"
-                                
-                            }else if p.name == Pieces.queen{
-                                answ = "Q"
-                            }else if p.name == Pieces.rock{
-                                answ = "R"
-                            }else if p.name == Pieces.bishop{
-                                answ = "B"
-                            }else if p.name == Pieces.knight{
-                                answ = "K"
-                            }else {
-                                answ = "P"
-                            }
-                            answ = answ + tempClr + " " + String(tempId)
-                            checkTheAnswer(answ)
+                            CGContextFillPath(context)
                             
-                            /*
-                             till here
-                             */
+                            tempClr = problems.move == "white" ? "1" : "2"
+                            answ = p.name.rawValue + tempClr + " " + String(tempId)
                         }
-                        
-                        
-                    }else{
-                        //print("previousTap= \(previousTap) tempId = \(tempId)")
+                    } else {
                         print("no")
                     }
                 }
-               // checkTheAnswer()
-                
             }
-            //till here
+
             CGContextFillPath(context)
 
-            if arr[index].taken != nil{
+            if arr[index].taken != nil {
                 let p1 = arr[index].taken
-                _=CGSize(width: CGFloat(arr[0].width), height: CGFloat(arr[0].height))
-                let location = CGPoint(x:CGFloat(p1.currentPos.x), y: CGFloat(p1.currentPos.y))
+                let location = CGPoint(x: CGFloat(p1.currentPos.x), y: CGFloat(p1.currentPos.y))
                 p1.img.drawAtPoint(location)
-              //  CGContextFillPath(context)
-                 CGContextFillPath(context)
-                
-                //print()
+                CGContextFillPath(context)
             }
-           //     CGContextFillPath(context)
-               
-         //   }
-
-
-            
         }
-//        if problem != nil{
-//            if problem.pieces.count > 0{
-//                for i in 0 ... problem.pieces.count-1{
-//                    let piece = problem.pieces[i]
-//                    _=CGSize(width: CGFloat(arr[0].width), height: CGFloat(arr[0].height))
-//                    let location = CGPoint(x:CGFloat(piece.currentPos.x), y: CGFloat(piece.currentPos.y))
-//                    piece.img.drawAtPoint(location)
-//                    
-//                }
-//            }
-//        }
-        
     }
-    func checkTheAnswer(answer:String){
-        // need to change to make if it is wrong to go back to the initial position
-        if answer == problems.answer{
+    
+    func checkTheAnswer(answer: String) {
+        if answer == problems.answer {
             myProtocol.showAlert("Correct")
-            return
-        }else{
+            probIndex += 1
+            myProtocol.setAPosition(probIndex)
+        } else {
             myProtocol.showAlert("You are wrong try again")
-            return
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(
+                1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+                self.myProtocol.setAPosition(self.probIndex)
+            }
         }
     }
-
 }
