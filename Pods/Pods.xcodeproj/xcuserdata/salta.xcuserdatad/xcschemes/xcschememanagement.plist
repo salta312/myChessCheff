@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>OAuthSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-chessTest2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +52,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>19953A28DBC126E153A31D4BF5654E5E</key>
+		<key>1CE89468DAE08FFE8278F8CA39C1F9B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D7CC2DF85A3F413AED97E9278232F78</key>
+		<key>45935B91DF0442390E2CA6DEEF68AE99</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,12 +67,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6CC8702BA6797E63F49706614300F362</key>
+		<key>935868B02D678B72AAD39DDD2E0FCF7D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>935868B02D678B72AAD39DDD2E0FCF7D</key>
+		<key>9BDEADFCC5EB589FD5A43C44178B4D0E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BDCDEA371C96F9F6A341C3FD324EDDC0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EE8CF099BF133F9FDC785F387A172A19</key>
+		<key>C8422C402A288DC69DF23151D0E009AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

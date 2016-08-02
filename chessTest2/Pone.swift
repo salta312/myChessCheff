@@ -24,10 +24,8 @@ class Pone: Piece{
         if color == UIColor.whiteColor(){
             self.img = self.resizeImage(UIImage(named: "wpone")!, targetSize: CGSize(width: CGFloat(currentPos.width), height: CGFloat(currentPos.height)))
             self.initPict = UIImage(named: "wpone")!
-            print("currentPos =\(currentPos.id)")
             if currentPos.id != 48 && currentPos.id != 49 && currentPos.id != 50 && currentPos.id != 51 && currentPos.id != 52 && currentPos.id != 53 && currentPos.id != 54 && currentPos.id != 55{
                 movesMade = 1
-                print("I made one move")
 
                 
             }else{
@@ -36,11 +34,9 @@ class Pone: Piece{
         }else{
             self.img = self.resizeImage(UIImage(named: "bpone")!, targetSize: CGSize(width: CGFloat(currentPos.width), height: CGFloat(currentPos.height)))
             self.initPict = UIImage(named: "bpone")!
-            print("currentPos =\(currentPos.id)")
 
             if currentPos.id != 8 && currentPos.id != 9 && currentPos.id != 10 && currentPos.id != 11 && currentPos.id != 12 && currentPos.id != 13 && currentPos.id != 14{
                 movesMade = 1
-                print("I made one move")
 
             }else{
                 movesMade = 0

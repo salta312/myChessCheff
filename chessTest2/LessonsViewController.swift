@@ -38,7 +38,6 @@ class LessonsViewController: UIViewController {
         leftBarButtonItem.target = self
         leftBarButtonItem.action = #selector(barButtonItemClicked(_:))
         self.navigationItem.leftBarButtonItem = leftBarButtonItem
-        //print(self.navigationItem.)
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor(red: 249/255, green: 247/255, blue: 244/255, alpha: 1)
         let less1 = Lesson()
@@ -90,7 +89,6 @@ class LessonsViewController: UIViewController {
 
     }
     func barButtonItemClicked(button: UIBarButtonItem){
-        //print("I work")
         toggleSideMenuView()
     }
     func draw(){

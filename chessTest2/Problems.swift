@@ -13,5 +13,6 @@ class Problems: NSObject {
     var composition: String?
     var answer: String?
     var move: String?
+    var note: String?
 
 }

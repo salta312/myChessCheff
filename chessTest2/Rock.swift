@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class Rock: Piece{
     var board:[Cell]!
+    var movesMade:Int!
     init(color:UIColor, initPos: Cell, currentPos: Cell){
         super.init()
         self.weight = 5
@@ -27,6 +28,28 @@ class Rock: Piece{
             self.initPict = UIImage(named: "brock")!
         }
         self.possibleMoves = self.detectMoves()
+        // board[currentPos]
+        
+        
+    }
+    init(color:UIColor, initPos: Cell, currentPos: Cell, movesMade:Int){
+        super.init()
+        self.weight = 5
+        self.board = Board.board
+        self.color=color
+        self.initPos=initPos
+        self.currentPos=currentPos
+        self.board[currentPos.id].taken = self
+        self.name=Pieces.rock
+        if color == UIColor.whiteColor(){
+            self.img = self.resizeImage(UIImage(named: "wrock")!, targetSize: CGSize(width: CGFloat(initPos.width), height: CGFloat(initPos.height)))
+            self.initPict = UIImage(named: "wrock")!
+        }else{
+            self.img = self.resizeImage(UIImage(named: "brock")!, targetSize: CGSize(width: CGFloat(initPos.width), height: CGFloat(initPos.height)))
+            self.initPict = UIImage(named: "brock")!
+        }
+        self.possibleMoves = self.detectMoves()
+        self.movesMade = movesMade
         // board[currentPos]
         
         

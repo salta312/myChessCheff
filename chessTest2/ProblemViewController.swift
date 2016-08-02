@@ -14,6 +14,7 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
     var board = Board.board
     var problems: [Problems]!
     var index = 0
+    var noteIndex = 0
     private lazy var view2: MyView2 = {
         let v = MyView2()
         v.myProtocol = self
@@ -25,6 +26,13 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
         button.addTarget(self, action: #selector(buttonPressed), forControlEvents: .TouchUpInside)
         return button
     }()
+    private lazy var moveLabel:UILabel = {
+        let label = UILabel()
+      //  label.text = problems[index].move
+     //   label.text = self.problems[index].move
+        return label
+        
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,16 +43,22 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
                                                            action: #selector(barButtonItemClicked(_:)))
         Board.cleanABoard()
         setAPosition(0)
+        moveLabel.textColor = UIColor.whiteColor()
+        moveLabel.text = problems[index].move
         
-        [view2, button].forEach { self.view.addSubview($0) }
+        print(problems[index].move)
         
-        constrain(view, view2, button){
-            view, v, button in
+        [view2, button, moveLabel].forEach { self.view.addSubview($0) }
+        
+        constrain(view, view2, button, moveLabel){
+            view, v, button, label in
             v.height == view.height - 164
             v.width == view.width
             v.top == view.top + 64
             v.centerX == view.centerX
-            button.top == v.bottom + 10
+            label.top == v.bottom + 10
+            label.centerX == v.centerX
+            button.top == label.bottom + 10
             button.centerX == v.centerX
             button.height == 30
         }
@@ -62,6 +76,11 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
 
         let composition = problems[index].composition
         let move = problems[index].move
+        let note = problems[index].note
+        var noteArr = note?.componentsSeparatedByString(", ")
+        guard let myNoteArr = noteArr else{
+            return
+        }
 
         guard let pieces = composition?.componentsSeparatedByString(", ")
             else { return }
@@ -79,10 +98,20 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
             if piece == "King" {
                 color = col == "1" ? .whiteColor() : .blackColor()
                 initPos = col == "1" ? 60 : 4
-                if initPos != Int(firstPiece) { movesMade = 1 }
+                if color == UIColor.whiteColor(){
+                    if noteIndex != 0{
+                        noteIndex = 0
+                    }
+                }
+                movesMade = Int(myNoteArr[noteIndex])!
+
+                //if initPos != Int(firstPiece) { movesMade = 1 }
                 
                 myPiece = King(color: color, initPos: board[initPos],
                     currentPos: board[Int(onePiece[1])!], movesMade: movesMade)
+                //print("I am king \(movesMade)")
+                //print(" and \(noteIndex)")
+                noteIndex += 1
                 
                 if myPiece.color == UIColor.whiteColor() && move == "white" {
                     view2.mainKing = myPiece as! King
@@ -127,7 +156,17 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
                     color = UIColor.blackColor()
                     initPos = 56
                 }
-                myPiece = Rock(color: color, initPos: board[initPos], currentPos: board[Int(onePiece[1])!])
+                //forced unwrapping!!!
+                movesMade = Int(myNoteArr[noteIndex])!
+                //print("I am rock \(movesMade)")
+               // print("and \(noteIndex)")
+                noteIndex = noteIndex + 1
+                if movesMade == 0 {
+                    initPos = board[Int(onePiece[1])!].id
+                }
+                myPiece = Rock(color: color, initPos: board[initPos], currentPos: board[Int(onePiece[1])!], movesMade: movesMade)
+
+
             }else if piece == "P"{
                 if col == "1"{
                     color = UIColor.whiteColor()

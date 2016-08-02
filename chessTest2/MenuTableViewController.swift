@@ -26,6 +26,7 @@ class MenuTableViewController: UITableViewController {
         arr.append("Lesson 1")
         arr.append("Lesson 2")
         arr.append("Problems")
+        arr.append("news")
        // task.lessons =
 
         // Uncomment the following line to preserve selection between presentations
@@ -82,8 +83,9 @@ class MenuTableViewController: UITableViewController {
             SVProgressHUD.show()
             loadProblemsAssync()
             
-            
-            
+        }else if indexPath.row == 3{
+            let vc: TwitterViewController = TwitterViewController()
+            delegate?.didSelectViewController(vc)
         }
     }
     //MARK: -Backendless

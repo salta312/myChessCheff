@@ -1,18 +1,25 @@
 PODS:
   - Backendless (3.0.27)
   - Cartography (0.5.0)
+  - Crashlytics (3.7.1):
+    - Fabric (~> 1.6.3)
   - ENSwiftSideMenu (0.1.1)
+  - Fabric (1.6.7)
   - KFSwiftImageLoader (2.0.1)
   - Navajo-Swift (0.0.6)
+  - OAuthSwift (0.5.2)
   - SideMenu (1.1.7)
   - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
   - Backendless
   - Cartography (from `https://github.com/robb/Cartography`)
+  - Crashlytics
   - ENSwiftSideMenu (~> 0.1.1)
+  - Fabric
   - KFSwiftImageLoader (~> 2.0)
   - Navajo-Swift
+  - OAuthSwift (~> 0.5.0)
   - SideMenu
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
 
@@ -33,12 +40,15 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Backendless: 565a82d9aa6ec01257e904e0a5c0146ffdb503ed
   Cartography: de3e85d2fc2d7288a2e7c89e1ac6cad08599d75e
+  Crashlytics: 3cdd4c9655be68032a0cf0379e0fb5ef6af22cad
   ENSwiftSideMenu: a934caefbe811e4925f172009349da4a49901307
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   KFSwiftImageLoader: a2b8a33a89116c767e7af8d2c109e8c483037b19
   Navajo-Swift: 3d7b1fe27e0db8052bb09b92043e1cfbd0513772
+  OAuthSwift: 1ef042d4362e755e24a78f158d817245641a5d24
   SideMenu: 7b420772e1aa7a2b3a0b0e191566e7e8e0868f53
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 77cbd572d74aa980d3ec7035e39a885ff7ab19d9
+PODFILE CHECKSUM: f1f7e49711ca3afe3cbfea3b8fea7bf638dbd5c0
 
 COCOAPODS: 1.0.1

@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 import ENSwiftSideMenu
+import Fabric
+import TwitterKit
+import Crashlytics
+import OAuthSwift
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,10 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var backendless = Backendless.sharedInstance()
 
     var window: UIWindow?
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        if (url.host == "oauth-callback") {
+            OAuthSwift.handleOpenURL(url)
+        }
+        return true
+    }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         backendless.initApp(APP_ID, secret:SECRET_KEY, version:VERSION_NUM)
+        Fabric.with([Crashlytics.self, Twitter.self])
         var edge: Float!
         if UIScreen.mainScreen().bounds.width > UIScreen.mainScreen().bounds.height{
             edge = Float((UIScreen.mainScreen().bounds.height-50)/8)
