@@ -36,7 +36,7 @@ class TwitterNewsCollectionViewController: UICollectionViewController , UICollec
         collectionView?.alwaysBounceVertical = true
         collectionView?.registerClass(StatusCell.self, forCellWithReuseIdentifier: TwitterNewsCollectionViewController.cellId)
         
-        let twitter = STTwitterAPI(OAuthConsumerKey: "Hbu9ERhR6qdCkVuV2UZcJFNre", consumerSecret: "IFrGqk2Xg0TcsF45suPrvAiSz3wjR8WEyFRoh8gRLKs6faFpuZ", oauthToken: "760395202783739904-OT4ZGNx8ydqVAwd7kejPfYtq0Bf5q1w", oauthTokenSecret: "wqFgCkPjUWqqV5j306hzX9qSWnbcatFzNIzg89UXf5rgw")
+        let twitter = STTwitterAPI(OAuthConsumerKey: "x", consumerSecret: "x", oauthToken: "71w", oauthTokenSecret: "wgw")
         
         twitter.verifyCredentialsWithUserSuccessBlock({ (username, userId) -> Void in
             
