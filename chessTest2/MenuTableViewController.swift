@@ -84,7 +84,9 @@ class MenuTableViewController: UITableViewController {
             loadProblemsAssync()
             
         }else if indexPath.row == 3{
-            let vc: TwitterViewController = TwitterViewController()
+            let layout = UICollectionViewFlowLayout()
+            layout.minimumLineSpacing = 0
+            let vc: TwitterNewsCollectionViewController = TwitterNewsCollectionViewController(collectionViewLayout: layout)
             delegate?.didSelectViewController(vc)
         }
     }

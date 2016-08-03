@@ -13,6 +13,7 @@ import Fabric
 import TwitterKit
 import Crashlytics
 import OAuthSwift
+import SwiftHEXColors
 
 
 @UIApplicationMain
@@ -24,13 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        if (url.host == "oauth-callback") {
-            OAuthSwift.handleOpenURL(url)
-        }
-        return true
-    }
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         backendless.initApp(APP_ID, secret:SECRET_KEY, version:VERSION_NUM)
@@ -49,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //Cell.Sheight = Float(((UIScreen.mainScreen().bounds.height-210))/8)
             window = UIWindow(frame: UIScreen.mainScreen().bounds)
             window?.rootViewController = UINavigationController(rootViewController: ViewController())
+            let bar = window?.rootViewController as! UINavigationController
+            bar.navigationBar.backgroundColor = UIColor(red: 1/255, green: 152/255, blue: 215/255, alpha: 1)
             window?.makeKeyAndVisible()
         }else{
            // Cell.SWidth = Float((UIScreen.mainScreen().bounds.width-50)/8)
@@ -59,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             window = UIWindow(frame: UIScreen.mainScreen().bounds)
             window?.rootViewController = nav1
+            nav1.navigationBar.backgroundColor = UIColor.blueColor()
             window?.makeKeyAndVisible()
         }
         return true

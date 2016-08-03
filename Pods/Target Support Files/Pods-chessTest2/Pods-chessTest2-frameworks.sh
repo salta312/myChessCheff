@@ -84,20 +84,28 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Cartography/Cartography.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ENSwiftSideMenu/ENSwiftSideMenu.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KFSwiftImageLoader/KFSwiftImageLoader.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Navajo-Swift/Navajo_Swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/OAuthSwift/OAuthSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/STTwitter/STTwitter.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SideMenu/SideMenu.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftHEXColors/SwiftHEXColors.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Cartography/Cartography.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ENSwiftSideMenu/ENSwiftSideMenu.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KFSwiftImageLoader/KFSwiftImageLoader.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Navajo-Swift/Navajo_Swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/OAuthSwift/OAuthSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/STTwitter/STTwitter.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SideMenu/SideMenu.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftHEXColors/SwiftHEXColors.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
 fi

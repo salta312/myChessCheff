@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (3.4.1)
   - Backendless (3.0.27)
   - Cartography (0.5.0)
   - Crashlytics (3.7.1):
@@ -9,9 +10,13 @@ PODS:
   - Navajo-Swift (0.0.6)
   - OAuthSwift (0.5.2)
   - SideMenu (1.1.7)
+  - STTwitter (0.2.4)
   - SVProgressHUD (2.0.3)
+  - SwiftHEXColors (1.0.4)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - Alamofire (from `https://github.com/Alamofire/Alamofire`)
   - Backendless
   - Cartography (from `https://github.com/robb/Cartography`)
   - Crashlytics
@@ -21,23 +26,37 @@ DEPENDENCIES:
   - Navajo-Swift
   - OAuthSwift (~> 0.5.0)
   - SideMenu
+  - STTwitter
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
+  - SwiftHEXColors
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
 EXTERNAL SOURCES:
+  Alamofire:
+    :git: https://github.com/Alamofire/Alamofire
   Cartography:
     :git: https://github.com/robb/Cartography
   SVProgressHUD:
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 50d57df67276347294d460572d699ecbe9c461be
+    :git: https://github.com/Alamofire/Alamofire
   Cartography:
     :commit: 114a314ce43ff68255c16a70e4c53824c9ecd539
     :git: https://github.com/robb/Cartography
   SVProgressHUD:
     :commit: 6ca5946638ed5bbf8ae36e3c3191901f76bf173b
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+  SwiftyJSON:
+    :commit: 73670b94292b8d8496c398a973f56ac67789ba9f
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   Backendless: 565a82d9aa6ec01257e904e0a5c0146ffdb503ed
   Cartography: de3e85d2fc2d7288a2e7c89e1ac6cad08599d75e
   Crashlytics: 3cdd4c9655be68032a0cf0379e0fb5ef6af22cad
@@ -47,8 +66,11 @@ SPEC CHECKSUMS:
   Navajo-Swift: 3d7b1fe27e0db8052bb09b92043e1cfbd0513772
   OAuthSwift: 1ef042d4362e755e24a78f158d817245641a5d24
   SideMenu: 7b420772e1aa7a2b3a0b0e191566e7e8e0868f53
+  STTwitter: a82de278afbd4191d0a07f4f3ffd8f1fb8404da0
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  SwiftHEXColors: b0ecc7bd83a1aa2e1956f9ba51f55ebb2bcf86ef
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: f1f7e49711ca3afe3cbfea3b8fea7bf638dbd5c0
+PODFILE CHECKSUM: f61a4e85f5b0feb24f8e929f6c7634fd4296d451
 
 COCOAPODS: 1.0.1
