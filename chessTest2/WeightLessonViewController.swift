@@ -16,11 +16,10 @@ class WeightLessonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        // view.backgroundColor = .blueColor()
-        let leftBarButtonItem = UIBarButtonItem()
-        leftBarButtonItem.title = "Menu"
-        leftBarButtonItem.target = self
-        leftBarButtonItem.action = #selector(barButtonItemClicked(_:))
-        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+        navigationController?.navigationBar.translucent = false
+        navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 152/255, blue: 215/255, alpha: 1)
+        navigationItem.title = "Ценность фигур"
+        
         // Do any additional setup after loading the view.
         let less1 = Lesson()
         let pieces1 = [Queen(color: UIColor.blackColor(), initPos: board[3], currentPos: board[28])]

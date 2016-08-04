@@ -10,31 +10,19 @@ import UIKit
 
 class MyView1: UIView {
     var lesson: Lesson!
-   // var num: Int!
-    func setSize(){
-       // Cell.Sheight = Float(self.frame.size.height/8)
-       // Cell.SWidth = Float(self.frame.size.width/8)
-
-    }
-
-    
     override func drawRect(rect: CGRect) {
        // Board.cleanABoard()
-        self.setSize()
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.clearColor()
         let context = UIGraphicsGetCurrentContext()
         var arr=Board.board
         for index in 0...arr.count-1{
-            //arr[index].x
-            ///var height=arr[index].height
-            //let rectangle=CGRectMake(CGFloat(arr[index].x), CGFloat(arr[index].y), CGFloat(arr[index].height), CGFloat(arr[index].width))
             let rectangle = CGRectMake(CGFloat(arr[index].x), CGFloat(arr[index].y), CGFloat(arr[index].width), CGFloat(arr[index].height))
             CGContextAddRect(context, rectangle)
             let col=arr[index].color
             if col == UIColor.brownColor(){
-                CGContextSetFillColorWithColor(context, UIColor(red: 226/255, green: 204/255, blue: 171/255, alpha: 1).CGColor)
+                CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
             }else{
-                 CGContextSetFillColorWithColor(context, UIColor(red: 194/255, green: 194/255, blue: 194/255, alpha: 1).CGColor)
+                 CGContextSetFillColorWithColor(context, UIColor(red: 192/255, green: 193/255, blue: 238/255, alpha: 1).CGColor)
             }
             CGContextFillPath(context)
             

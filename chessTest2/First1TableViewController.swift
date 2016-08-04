@@ -69,10 +69,7 @@ class First1TableViewController: UITableViewController {
             
             
         }else if indexPath.row == 1{
-            let vc: WeightLessonViewController = WeightLessonViewController()
-            //var navBar: UINavigationBar = UINavigationBar(frame: CGRect(x:0, y:0, width:320, height:64))
-
-           // vc.navigationItem.title = "Уроки"
+            let vc = UINavigationController(rootViewController: LessonsMenuTableViewController())
             self.presentViewController(vc, animated: true, completion: nil)
 
             //delegate?.didSelectViewController(vc)

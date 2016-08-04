@@ -48,6 +48,8 @@
 		B72FD86A1D43752300291F7D /* ProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD8691D43752300291F7D /* ProblemViewController.swift */; };
 		B72FD86C1D43882C00291F7D /* Problems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD86B1D43882C00291F7D /* Problems.swift */; };
 		B732C2431D5333F900EBE15A /* LessonsMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732C2421D5333F900EBE15A /* LessonsMenuTableViewController.swift */; };
+		B732C2451D536A9A00EBE15A /* OragneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732C2441D536A9A00EBE15A /* OragneView.swift */; };
+		B732C2471D536AA900EBE15A /* GreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732C2461D536AA900EBE15A /* GreenView.swift */; };
 		B73DE5F11D424AFF00A1CD0A /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5E81D424AFF00A1CD0A /* Bishop.swift */; };
 		B73DE5F21D424AFF00A1CD0A /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5E91D424AFF00A1CD0A /* King.swift */; };
 		B73DE5F31D424AFF00A1CD0A /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73DE5EA1D424AFF00A1CD0A /* Knight.swift */; };
@@ -134,6 +136,8 @@
 		B72FD8691D43752300291F7D /* ProblemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemViewController.swift; sourceTree = "<group>"; };
 		B72FD86B1D43882C00291F7D /* Problems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problems.swift; sourceTree = "<group>"; };
 		B732C2421D5333F900EBE15A /* LessonsMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsMenuTableViewController.swift; sourceTree = "<group>"; };
+		B732C2441D536A9A00EBE15A /* OragneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OragneView.swift; sourceTree = "<group>"; };
+		B732C2461D536AA900EBE15A /* GreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenView.swift; sourceTree = "<group>"; };
 		B73DE5E81D424AFF00A1CD0A /* Bishop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bishop.swift; sourceTree = "<group>"; };
 		B73DE5E91D424AFF00A1CD0A /* King.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = King.swift; sourceTree = "<group>"; };
 		B73DE5EA1D424AFF00A1CD0A /* Knight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 				B7F95DDB1D383197002D16CB /* MyTableViewCell.swift */,
 				B7A963611D38C14700561A50 /* MyView2.swift */,
 				B7A963631D38FBC800561A50 /* CustomPoneView.swift */,
+				B732C2441D536A9A00EBE15A /* OragneView.swift */,
+				B732C2461D536AA900EBE15A /* GreenView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -549,6 +555,7 @@
 				B73DE5F61D424AFF00A1CD0A /* Pieces.swift in Sources */,
 				B7F95DDA1D3825D7002D16CB /* TempViewController.swift in Sources */,
 				B72615321D526A0C00BF4139 /* TwitterNewsCollectionViewController.swift in Sources */,
+				B732C2451D536A9A00EBE15A /* OragneView.swift in Sources */,
 				B73DE5F51D424AFF00A1CD0A /* Piece.swift in Sources */,
 				B726156A1D531C8C00BF4139 /* SwifterFavorites.swift in Sources */,
 				B7F95DD61D3816C6002D16CB /* SideNavigationViewController.swift in Sources */,
@@ -568,6 +575,7 @@
 				B7FDF74C1D50B1DD00FE418F /* TwitterViewController.swift in Sources */,
 				B72615641D531C8C00BF4139 /* Swifter.swift in Sources */,
 				B732C2431D5333F900EBE15A /* LessonsMenuTableViewController.swift in Sources */,
+				B732C2471D536AA900EBE15A /* GreenView.swift in Sources */,
 				B72615341D530AEB00BF4139 /* FirstTableViewController.swift in Sources */,
 				B726155F1D531C8C00BF4139 /* JSON.swift in Sources */,
 				B72615651D531C8C00BF4139 /* SwifterAccountsClient.swift in Sources */,

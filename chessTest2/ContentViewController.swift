@@ -10,45 +10,38 @@ import UIKit
 import Cartography
 
 class ContentViewController: UIViewController {
+   // var views = [UIView]()
     var lesson:Lesson!
     var currentNum: Int!
     var total:Int!
     var prot: NextPreviousProtcol!
     var label: UILabel = {
         let label = UILabel()
-        //label.text = "This is just testing so don't worry it will look differently"
-        //label.layer.borderWidth = 3
         label.numberOfLines = 0
-        label.font = label.font.fontWithSize(15)
-        label.backgroundColor = UIColor.blackColor()
+        label.font = label.font.fontWithSize(10)
+        //label.backgroundColor = UIColor.blackColor()
         label.textColor = UIColor.whiteColor()
         return label
     }()
     lazy var label1: UILabel = {
         let label = UILabel()
-        //label.numberOfLines = 0
-        label.text = "\(self.currentNum  + 1) from \(self.total)"
-        label.font = label.font.fontWithSize(8)
-        label.backgroundColor = UIColor.blackColor()
+        label.text = "\(self.currentNum  + 1) из \(self.total)"
+        label.font = label.font.fontWithSize(20)
         label.textColor = UIColor.whiteColor()
        // label.text = "Test"
         return label
     }()
-    lazy var button: UIButton = {
+    lazy var button2: UIButton = {
         let button = UIButton()
-        button.setImage(self.resizeImage(UIImage(named: "export1")!, targetSize: CGSize(width: CGFloat(30), height: CGFloat(30))), forState: .Normal)
-        button.addTarget(self, action: #selector(ContentViewController.next), forControlEvents: .TouchUpInside)
-
-       // print("I added button")
+        button.backgroundColor = UIColor.whiteColor()
+        button.setImage(UIImage(named:"books"), forState: .Normal)
+        button.addTarget(self, action: #selector(goBack), forControlEvents: .TouchUpInside)
         return button
+        
     }()
-    lazy var button1: UIButton = {
-        let button = UIButton()
-        button.setImage(self.resizeImage(UIImage(named: "export2")!, targetSize: CGSize(width: CGFloat(30), height: CGFloat(30))), forState: .Normal)
-        button.addTarget(self, action: #selector(ContentViewController.previous(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-
-        return button
-    }()
+    func goBack(){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +49,11 @@ class ContentViewController: UIViewController {
         self.draw()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        button2.layer.cornerRadius = button2.bounds.size.height / 2
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,67 +63,38 @@ class ContentViewController: UIViewController {
     func draw(){
         let v = MyView1()
         let wid = view.frame.size.width
-       // print("Wid = \(wid)")
         v.lesson = self.lesson
-        //v.num = self.num
-        view.backgroundColor = UIColor.blackColor()
-        view.addSubview(v)
-        view.addSubview(label)
-        view.addSubview(label1)
-        view.addSubview(button)
-        view.addSubview(button1)
+        view.backgroundColor = UIColor(red: 249/255, green: 97/255, blue: 91/255, alpha: 1)
+        [button2, label, label1].forEach { self.view.addSubview($0) }
+        self.view.addSubview(v)
         label.text = lesson.text
         let h = Cell.Sheight*8+50
-      //  print("Height is \(Cell.Sheight)")
-        constrain(view, v, label, label1, button){
-            view, v, label, label1, button in
-            //label.top == view.top
-            //label.width == view.width
-            button.top == view.top + 64
-            button.width == 30
-            button.height == 30
-            button.rightMargin == view.rightMargin 
-            v.top == view.top + 64
-            v.centerX == view.centerX
-            v.width == view.width
-            //v.height == view.height - 160
-            v.height == CGFloat(h)
-            label.top == v.bottom + 10
-            label.centerX == v.centerX
-            label.width == v.width
-            label1.top == view.bottom - 10
-            label1.width == view.width
+        constrain(view, v, label, label1, button2){
+            view, v, label, label1, button2 in
+            label1.top == view.top + 64
             label1.centerX == view.centerX
-            
-           // button.left == CGFloat(wid - 50)
-           // button.left == CGFloat(50)
-           // button.centerX == CGFloat(wid - 50)
-         //   button.centerX == view.width - 50
-            
-            
+            v.top == label1.bottom
+            v.centerX == view.centerX
+            v.height == CGFloat(Cell.Sheight*8)
+            v.width == CGFloat(Cell.SWidth*8)
+            label.top == v.bottom + 27
+            label.centerX == v.centerX
+            label.right == v.right - 38
+            label.left == v.left + 38
+            button2.bottom == view.bottom
+            button2.centerX == view.centerX
+            button2.height == CGFloat(50)
+            button2.width == CGFloat(50)
             
 
         }
-        constrain(button1, view){
-            button1, view in
-            button1.top == view.top + 64
-            button1.leftMargin == view.leftMargin
-            button1.height == 30
-            button1.width == 30
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if defaults.stringForKey("screenWidth") != nil{
+        }else{
+         defaults.setFloat(Float(v.frame.size.height), forKey: "screenHeight")
+         defaults.setFloat(Float(v.frame.size.width), forKey: "screenWidth")
         }
-                let defaults = NSUserDefaults.standardUserDefaults()
-                if defaults.stringForKey("screenWidth") != nil{
-                   // print(w)
-                }else{
-                    defaults.setFloat(Float(v.frame.size.height), forKey: "screenHeight")
-                    defaults.setFloat(Float(v.frame.size.width), forKey: "screenWidth")
-                    //print("I am here")
-                }
 
-        //print("My size is \(label.frame.size.height)")
-
-      //  print(" final \(v.frame.height)")
-       // print(" final \(v.frame.width)")
 
         
 
@@ -149,23 +118,11 @@ class ContentViewController: UIViewController {
         return newImage
     }
     func next(){
-       // print("I am shocked")
         prot.next(currentNum)
     }
     func previous(sender: UIButton){
-        //print("I am also shocked")
         prot.previous(currentNum)
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -10,13 +10,27 @@ import UIKit
 import Cartography
 
 class LessonsMenuTableViewController: UITableViewController {
+    var arr = [String]()
+    var images = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let leftBarButtonItem = UIBarButtonItem()
+        leftBarButtonItem.title = "Close"
+        leftBarButtonItem.target = self
+        leftBarButtonItem.action = #selector(barButtonItemClicked(_:))
+        self.navigationItem.rightBarButtonItem = leftBarButtonItem
         navigationItem.title = "Уроки"
         navigationController?.navigationBar.backgroundColor = UIColor(red: 1/255, green: 152/255, blue: 215/255, alpha: 1)
+        arr.append("Как ходят фигуры")
+        arr.append("Ценность фигур")
+        images.append(UIImage(named: "number-1")!)
+        images.append(UIImage(named: "number-two")!)
         
 
+    }
+    func barButtonItemClicked(button: UIBarButtonItem){
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,23 +42,41 @@ class LessonsMenuTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return arr.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
+        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell.textLabel?.text = arr[indexPath.row]
+        cell.imageView?.image = images[indexPath.row]
+        
+        //    cell.title = arr[indexPath.row]
+        
         // Configure the cell...
-
+        
         return cell
     }
-    */
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0{
+            let vc = UINavigationController(rootViewController: LessonsViewController())
+            self.presentViewController(vc, animated: true, completion: nil)
+            
+        }else if indexPath.row == 1{
+            let vc = UINavigationController(rootViewController: WeightLessonViewController())
+            self.presentViewController(vc, animated: true, completion: nil)
+            
+            //delegate?.didSelectViewController(vc)
+            //            self.presentViewController(vc, animated: true, completion: nil)
+        }
+    }
+ 
 
     /*
     // Override to support conditional editing of the table view.
