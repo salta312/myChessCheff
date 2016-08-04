@@ -36,11 +36,10 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.backgroundColor = UIColor(red: 1/255, green: 152/255, blue: 215/255, alpha: 1)
+        navigationItem.title = "Задачи"
+        self.view.backgroundColor = UIColor(hexString: "FFFAC3")
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu",
-                                                           style: .Plain,
-                                                           target: self,
-                                                           action: #selector(barButtonItemClicked(_:)))
         Board.cleanABoard()
         setAPosition(0)
         moveLabel.textColor = UIColor.whiteColor()
@@ -52,9 +51,9 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
         
         constrain(view, view2, button, moveLabel){
             view, v, button, label in
-            v.height == view.height - 164
-            v.width == view.width
-            v.top == view.top + 64
+            v.height == CGFloat(Cell.Sheight*8)
+            v.width == CGFloat(Cell.SWidth*8)
+            v.top == view.top + 84
             v.centerX == view.centerX
             label.top == v.bottom + 10
             label.centerX == v.centerX

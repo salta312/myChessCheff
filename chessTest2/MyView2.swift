@@ -115,8 +115,8 @@ class MyView2: UIView {
             let col = arr[index].color
 
             col == UIColor.brownColor()
-                ? CGContextSetFillColorWithColor(context, UIColor(red: 226/255, green: 204/255, blue: 171/255, alpha: 1).CGColor)
-                : CGContextSetFillColorWithColor(context, UIColor(red: 194/255, green: 194/255, blue: 194/255, alpha: 1).CGColor)
+                ? CGContextSetFillColorWithColor(context, UIColor(red: 192/255, green: 193/255, blue: 238/255, alpha: 1).CGColor)
+                : CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
             if tapNumber == 1 {
                 if tempId != nil && tempId == index{
                     if arr[index].taken != nil{

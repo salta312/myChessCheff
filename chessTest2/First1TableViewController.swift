@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import SVProgressHUD
+
 
 class First1TableViewController: UITableViewController {
     var arr = [String]()
     var images = [UIImage]()
+    var problems = [Problems]()
+
 
 
     override func viewDidLoad() {
@@ -69,22 +73,61 @@ class First1TableViewController: UITableViewController {
             
             
         }else if indexPath.row == 1{
-            let vc = UINavigationController(rootViewController: LessonsMenuTableViewController())
-            self.presentViewController(vc, animated: true, completion: nil)
+            SVProgressHUD.show()
+            loadProblemsAssync()
+
 
             //delegate?.didSelectViewController(vc)
             //            self.presentViewController(vc, animated: true, completion: nil)
         }else if indexPath.row == 2{
-           // SVProgressHUD.show()
-           // loadProblemsAssync()
-           //
-        }else if indexPath.row == 3{
-            let layout = UICollectionViewFlowLayout()
-            layout.minimumLineSpacing = 0
-            let vc: TwitterNewsCollectionViewController = TwitterNewsCollectionViewController(collectionViewLayout: layout)
-           // delegate?.didSelectViewController(vc)
+            //else if indexPath.row == 2{
+                print("I am here")
+                let layout = UICollectionViewFlowLayout()
+                layout.minimumLineSpacing = 0
+            //let vc = UINavigationController(rootViewController: WeightLessonViewController())
+                let vc = UINavigationController(rootViewController: TwitterNewsCollectionViewController(collectionViewLayout: layout))
+                self.presentViewController(vc, animated: true, completion: nil)
+           // }
         }
     }
+    func loadProblemsAssync(){
+        let dataStore = Backendless.sharedInstance().data.of(Problems.ofClass())
+        dataStore.find(
+            { (result: BackendlessCollection!) -> Void in
+                //     print("I am here")
+                let probs = result.getCurrentPage()
+                //     print(cities)
+                for obj in probs {
+                    //print(obj)
+                    let prob=obj as! Problems
+                    // print(city.title)
+                    self.problems.append(prob)
+                    //print(prob.composition)
+                }
+                let vc = ProblemViewController()
+                vc.problems = self.problems
+                SVProgressHUD.dismiss()
+               // self.delegate?.didSelectViewController(vc)
+                let vc1 = UINavigationController(rootViewController: vc)
+                self.presentViewController(vc1, animated: true, completion: nil)
+                
+                //self.tableView.reloadData()
+            },
+            error: { (fault: Fault!) -> Void in
+                print("Server reported an error: \(fault)")
+                SVProgressHUD.dismiss()
+                self.callAlert("Server reported an error: \(fault)")
+                
+        })
+        
+    }
+    func callAlert(message:String!){
+        let alertController=UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let OKButton=UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(OKButton)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+
     
 
     /*

@@ -21,16 +21,23 @@ class TwitterNewsCollectionViewController: UICollectionViewController , UICollec
     static let cellId = "cellId"
     
     var homeStatuses: [HomeStatus]?
+    func callAlert(message:String!){
+        let alertController=UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let OKButton=UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(OKButton)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.backgroundColor = UIColor(red: 1/255, green: 152/255, blue: 215/255, alpha: 1)
         let leftBarButtonItem = UIBarButtonItem()
-        leftBarButtonItem.title = "Menu"
+        leftBarButtonItem.title = "Close"
         leftBarButtonItem.target = self
         leftBarButtonItem.action = #selector(barButtonItemClicked(_:))
-        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+        self.navigationItem.rightBarButtonItem = leftBarButtonItem
         
-        navigationItem.title = "News"
+        navigationItem.title = "Новости"
         
         collectionView?.backgroundColor = UIColor.whiteColor()
         collectionView?.alwaysBounceVertical = true
@@ -61,15 +68,16 @@ class TwitterNewsCollectionViewController: UICollectionViewController , UICollec
                 
                 }, errorBlock: { (error) -> Void in
                     print(error)
+                    self.callAlert("\(error)")
             })
             
         }) { (error) -> Void in
-            print(error)
+            self.callAlert("\(error)")
         }
         
     }
     func barButtonItemClicked(button: UIBarButtonItem){
-        toggleSideMenuView()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -111,6 +119,7 @@ class TwitterNewsCollectionViewController: UICollectionViewController , UICollec
 }
 
 class StatusCell: UICollectionViewCell {
+
     
     var homeStatus: HomeStatus? {
         didSet {
@@ -131,10 +140,11 @@ class StatusCell: UICollectionViewCell {
                     
                     if error != nil {
                         print(error)
+                       // self.callAlert("\(error)")
                         return
                     }
                     
-                    print("loaded image")
+                   // print("loaded image")
                     let image = UIImage(data: data!)
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         self.profileImageView.image = image

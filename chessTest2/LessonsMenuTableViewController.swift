@@ -71,6 +71,7 @@ class LessonsMenuTableViewController: UITableViewController {
             self.presentViewController(vc, animated: true, completion: nil)
             
         }else if indexPath.row == 1{
+            print("no I am here")
             let vc = UINavigationController(rootViewController: WeightLessonViewController())
             self.presentViewController(vc, animated: true, completion: nil)
             
