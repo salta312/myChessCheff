@@ -70,6 +70,7 @@ class MenuTableViewController: UITableViewController {
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath.row)
         if indexPath.row == 0{
             let vc: LessonsViewController = LessonsViewController()
             delegate?.didSelectViewController(vc)

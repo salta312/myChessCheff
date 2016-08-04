@@ -21,10 +21,10 @@ class PiecesWeightViewController: UIPageViewController, NextPreviousProtcol1 {
         self.delegate = self
         
         setViewControllers([newContentViewController(0)] , direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

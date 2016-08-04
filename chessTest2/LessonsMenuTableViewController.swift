@@ -64,6 +64,8 @@ class LessonsMenuTableViewController: UITableViewController {
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath.row)
+
         if indexPath.row == 0{
             let vc = UINavigationController(rootViewController: LessonsViewController())
             self.presentViewController(vc, animated: true, completion: nil)

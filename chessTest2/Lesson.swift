@@ -13,4 +13,5 @@ class Lesson: NSObject {
     var text: String!
     var pieces: [Piece]!
     var col: [UIColor]!
+
 }
