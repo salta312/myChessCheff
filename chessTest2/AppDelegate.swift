@@ -37,7 +37,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         Cell.SWidth = edge
         Cell.Sheight = edge
-        if backendless.userService.currentUser == nil{
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = UINavigationController(rootViewController: First1TableViewController())
+        let bar = window?.rootViewController as! UINavigationController
+        bar.navigationBar.backgroundColor = UIColor(red: 1/255, green: 152/255, blue: 215/255, alpha: 1)
+        window?.makeKeyAndVisible()
+        
+        //will use this in the future
+  /*      if backendless.userService.currentUser == nil{
 
             //Cell.SWidth = Float((UIScreen.mainScreen().bounds.width-50)/8)
             //Cell.Sheight = Float(((UIScreen.mainScreen().bounds.height-210))/8)
@@ -57,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = nav1
             nav1.navigationBar.backgroundColor = UIColor.blueColor()
             window?.makeKeyAndVisible()
-        }
+        }*/
         return true
 
     }
