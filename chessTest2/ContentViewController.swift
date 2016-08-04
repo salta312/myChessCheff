@@ -65,6 +65,11 @@ class ContentViewController: UIViewController {
         let wid = view.frame.size.width
         v.lesson = self.lesson
         view.backgroundColor = UIColor(red: 249/255, green: 97/255, blue: 91/255, alpha: 1)
+        print(self.view.frame.size.height)
+        if self.view.frame.size.height > 500{
+            print("I am here")
+            label.font = label.font.fontWithSize(CGFloat(15))
+        }
         [button2, label, label1].forEach { self.view.addSubview($0) }
         self.view.addSubview(v)
         label.text = lesson.text

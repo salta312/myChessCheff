@@ -17,8 +17,10 @@ class WeightLessonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        // view.backgroundColor = .blueColor()
-        navigationController?.navigationBar.translucent = false
+        navigationController?.navigationBar.backgroundColor = UIColor(red: 1/255, green: 152/255, blue: 215/255, alpha: 1)
+        navigationItem.title = "Урок 2 - Ценность фигур"
         //important lines of code!!!!
+        //navigationController?.navigationBar.translucent = false
         //navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 152/255, blue: 215/255, alpha: 1)
         //navigationItem.title = "Ценность фигур"
         

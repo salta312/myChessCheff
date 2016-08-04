@@ -34,7 +34,7 @@ class OragneView: UIView {
         self.addSubview(label)
         constrain(self, label, img1){
             view, label, img1 in
-            label.top == view.top + 20
+            label.top == view.top + 64
             label.centerX == view.centerX
             img1.top == label.bottom + 20
             img1.centerX == view.centerX

@@ -143,7 +143,7 @@ class WeightViewController: UIViewController {
         }
         constrain(view, label1){
             view, label1 in
-            label1.top == view.top
+            label1.top == view.top + 64
             label1.centerX == view.centerX
            // label1.width == CGFloat(50)
             label1.height == CGFloat(20)

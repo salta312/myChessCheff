@@ -40,13 +40,16 @@ class GreenView: UIView {
             else  if lesson.pieces[0].weight == 5{
                 distance = 30
             } else if lesson.pieces[0].weight == 3{
-                distance = 70
+                distance = 90
             }else{
-                distance = viewHeight/2 - 30
+                distance = viewHeight/2 
             }
             for index in 0...lesson.pieces[0].weight-1{
-                print("I am here")
                 tempIndex = tempIndex + distance
+                print("I am here")
+                if index == 0 {
+                    tempIndex = tempIndex + 64
+                }
                 if index != 0{
                     tempIndex = tempIndex + Float(img.size.height)
                 }
@@ -57,7 +60,7 @@ class GreenView: UIView {
             }
             
         }else if lesson.pieces[0].name == Pieces.king{
-            var distance = viewHeight/2 - 30
+            var distance = viewHeight/2
             tempIndex = tempIndex + distance
             var imgView = UIImageView(image: imgForKing)
             imgView.frame = CGRect(x: CGFloat(100), y: CGFloat(tempIndex), width: imgForKing.size.width, height: imgForKing.size.height)
