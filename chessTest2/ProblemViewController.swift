@@ -22,8 +22,18 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
     }()
     private lazy var button: UIButton = {
         let button = UIButton()
-        button.setTitle("next", forState: .Normal)
+        button.backgroundColor = UIColor.whiteColor()
+        //button.setTitle("next", forState: .Normal)
+        button.setImage(UIImage(named:"next"), forState: .Normal)
         button.addTarget(self, action: #selector(buttonPressed), forControlEvents: .TouchUpInside)
+        return button
+    }()
+    private lazy var button2: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor.whiteColor()
+        //button.setTitle("next", forState: .Normal)
+        button.setImage(UIImage(named:"icon"), forState: .Normal)
+        button.addTarget(self, action: #selector(goBack), forControlEvents: .TouchUpInside)
         return button
     }()
     private lazy var moveLabel:UILabel = {
@@ -33,33 +43,52 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
         return label
         
     }()
+    func goBack(){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        button.layer.cornerRadius = button.bounds.size.height / 2
+        button2.layer.cornerRadius = button.bounds.size.height / 2
+        //button3.layer.cornerRadius = button2.bounds.size.height / 2
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.backgroundColor = UIColor(red: 1/255, green: 152/255, blue: 215/255, alpha: 1)
         navigationItem.title = "Задачи"
-        self.view.backgroundColor = UIColor(hexString: "FFFAC3")
+        self.view.backgroundColor = UIColor(hexString: "FEE3C7")
         
         Board.cleanABoard()
         setAPosition(0)
-        moveLabel.textColor = UIColor.whiteColor()
-        moveLabel.text = problems[index].move
+        moveLabel.textColor = UIColor.blackColor()
+        
+        if problems[index].move == "white"{
+            moveLabel.text = "Ход белых"
+        }else{
+            moveLabel.text = "Ход черных"
+        }
         
         print(problems[index].move)
         
-        [view2, button, moveLabel].forEach { self.view.addSubview($0) }
+        [view2, button, moveLabel, button2].forEach { self.view.addSubview($0) }
         
-        constrain(view, view2, button, moveLabel){
-            view, v, button, label in
+        constrain(view, view2, moveLabel, button, button2){
+            view, v, label, button, button2 in
             v.height == CGFloat(Cell.Sheight*8)
             v.width == CGFloat(Cell.SWidth*8)
             v.top == view.top + 84
             v.centerX == view.centerX
             label.top == v.bottom + 10
-            label.centerX == v.centerX
-            button.top == label.bottom + 10
-            button.centerX == v.centerX
-            button.height == 30
+            label.centerX == view.centerX
+            button2.bottom == view.bottom - 20
+            button2.centerX == view.centerX - 100
+            button2.height == CGFloat(50)
+            button2.width == CGFloat(50)
+            button.bottom == view.bottom - 20
+            button.centerX == view.centerX + 100
+            button.height == CGFloat(50)
+            button.width == CGFloat(50)
         }
     }
     

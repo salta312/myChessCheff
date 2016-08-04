@@ -18,8 +18,9 @@ class WeightLessonViewController: UIViewController {
         super.viewDidLoad()
        // view.backgroundColor = .blueColor()
         navigationController?.navigationBar.translucent = false
-        navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 152/255, blue: 215/255, alpha: 1)
-        navigationItem.title = "Ценность фигур"
+        //important lines of code!!!!
+        //navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 152/255, blue: 215/255, alpha: 1)
+        //navigationItem.title = "Ценность фигур"
         
         // Do any additional setup after loading the view.
         let less1 = Lesson()
