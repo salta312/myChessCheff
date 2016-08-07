@@ -27,7 +27,7 @@ class Knight: Piece{
             self.img = self.resizeImage(UIImage(named: "bknight")!, targetSize: CGSize(width: CGFloat(initPos.width), height: CGFloat(initPos.height)))
             self.initPict = UIImage(named: "bknight")!
         }
-        self.possibleMoves = self.detectMoves()
+      //  self.possibleMoves = self.detectMoves()
     }
     override func detectMoves()->[Move]{
         var possibleMoves=[Move]()

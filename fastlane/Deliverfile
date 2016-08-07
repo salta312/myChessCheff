@@ -7,7 +7,7 @@
 # Feel free to remove the following line if you use fastlane (which you should)
 
 username "info@n17r.com" # your Apple ID user
-app_version "1.0"
+app_version "2.0"
 app_icon "./fastlane/metadata/AppIcon.png"
 metadata_path "./fastlane/metadata"
 screenshots_path "./fastlane/screenshots"
@@ -19,8 +19,8 @@ app_review_information(
   last_name: "Aimakhanova",
   phone_number: "+77773073731",
   email_address: "salta312@gmail.com",
-  demo_user: "ithoughticoulddance@gmail.com",
-  demo_password: "test123",
+  demo_user: "",
+  demo_password: "",
   notes: "such notes, very text"
 )
 automatic_release false

@@ -37,7 +37,7 @@ class Piece:NSObject{
         return newImage
     }
     func detectMoves()->[Move]{
-        var possibleMoves=[Move]()
+        let possibleMoves=[Move]()
         return possibleMoves
         
     }

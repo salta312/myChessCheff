@@ -42,7 +42,7 @@ class Pone: Piece{
                 movesMade = 0
             }
         }
-        self.possibleMoves = self.detectMoves()
+       // self.possibleMoves = self.detectMoves()
     }
     init(color:UIColor, initPos: Cell, currentPos: Cell){
         super.init()

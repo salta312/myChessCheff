@@ -62,7 +62,7 @@ class ContentViewController: UIViewController {
     }
     func draw(){
         let v = MyView1()
-        let wid = view.frame.size.width
+        _ = view.frame.size.width
         v.lesson = self.lesson
         view.backgroundColor = UIColor(red: 249/255, green: 97/255, blue: 91/255, alpha: 1)
         print(self.view.frame.size.height)
@@ -73,7 +73,7 @@ class ContentViewController: UIViewController {
         [button2, label, label1].forEach { self.view.addSubview($0) }
         self.view.addSubview(v)
         label.text = lesson.text
-        let h = Cell.Sheight*8+50
+        _ = Cell.Sheight*8+50
         constrain(view, v, label, label1, button2){
             view, v, label, label1, button2 in
             label1.top == view.top + 64

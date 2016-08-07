@@ -26,7 +26,7 @@ class Queen: Piece{
             self.img = self.resizeImage(UIImage(named: "bqueen")!, targetSize: CGSize(width: CGFloat(initPos.width), height: CGFloat(initPos.height)))
             self.initPict = UIImage(named: "bqueen")!
         }
-        self.possibleMoves = self.detectMoves()
+      //  self.possibleMoves = self.detectMoves()
     }
     override func detectMoves()->[Move]{
         var possibleMoves=[Move]()

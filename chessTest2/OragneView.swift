@@ -26,10 +26,10 @@ class OragneView: UIView {
         //setup()
     }
     func setUp(){
-        var name = lesson.text
+        let name = lesson.text
         label.text = name
         label.textColor = UIColor.whiteColor()
-        var img1 = UIImageView(image: img)
+        let img1 = UIImageView(image: img)
         self.addSubview(img1)
         self.addSubview(label)
         constrain(self, label, img1){

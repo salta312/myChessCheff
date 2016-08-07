@@ -65,6 +65,7 @@
 		B7A963621D38C14700561A50 /* MyView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A963611D38C14700561A50 /* MyView2.swift */; };
 		B7A963641D38FBC800561A50 /* CustomPoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A963631D38FBC800561A50 /* CustomPoneView.swift */; };
 		B7A963681D3CDC8A00561A50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A963671D3CDC8A00561A50 /* Assets.xcassets */; };
+		B7F8DF121D565AFC0044A180 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F8DF111D565AFC0044A180 /* Cell.swift */; };
 		B7F95DD61D3816C6002D16CB /* SideNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F95DD51D3816C6002D16CB /* SideNavigationViewController.swift */; };
 		B7F95DD81D381DE7002D16CB /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F95DD71D381DE7002D16CB /* MenuTableViewController.swift */; };
 		B7F95DDA1D3825D7002D16CB /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F95DD91D3825D7002D16CB /* TempViewController.swift */; };
@@ -84,7 +85,6 @@
 		B7FFB63F1D3572FB003C148B /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB63E1D3572FB003C148B /* LessonViewController.swift */; };
 		B7FFB6411D357A4F003C148B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB6401D357A4F003C148B /* ContentViewController.swift */; };
 		B7FFB6431D358B3E003C148B /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB6421D358B3E003C148B /* Board.swift */; };
-		B7FFB6451D358B47003C148B /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB6441D358B47003C148B /* Cell.swift */; };
 		B7FFB65F1D359603003C148B /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB65E1D359603003C148B /* Lesson.swift */; };
 		B7FFB6621D360870003C148B /* MyView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB6611D360870003C148B /* MyView1.swift */; };
 /* End PBXBuildFile section */
@@ -153,6 +153,7 @@
 		B7A963611D38C14700561A50 /* MyView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView2.swift; sourceTree = "<group>"; };
 		B7A963631D38FBC800561A50 /* CustomPoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPoneView.swift; sourceTree = "<group>"; };
 		B7A963671D3CDC8A00561A50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7F8DF111D565AFC0044A180 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		B7F95DD51D3816C6002D16CB /* SideNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideNavigationViewController.swift; sourceTree = "<group>"; };
 		B7F95DD71D381DE7002D16CB /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		B7F95DD91D3825D7002D16CB /* TempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +175,6 @@
 		B7FFB63E1D3572FB003C148B /* LessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		B7FFB6401D357A4F003C148B /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		B7FFB6421D358B3E003C148B /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Board.swift; path = ../../chessTest/chessTest/Board.swift; sourceTree = "<group>"; };
-		B7FFB6441D358B47003C148B /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = ../../chessTest/chessTest/Cell.swift; sourceTree = "<group>"; };
 		B7FFB64F1D358B6A003C148B /* chessTest1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; name = chessTest1.app; path = "/Users/salta/Library/Developer/Xcode/DerivedData/chessTest1-dglhlcregfblhqdjxatchcdfrqzl/Build/Products/Debug-iphonesimulator/chessTest1.app"; sourceTree = "<absolute>"; };
 		B7FFB65E1D359603003C148B /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		B7FFB6611D360870003C148B /* MyView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView1.swift; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 				B73DE5EF1D424AFF00A1CD0A /* Queen.swift */,
 				B73DE5F01D424AFF00A1CD0A /* Rock.swift */,
 				B7FFB6421D358B3E003C148B /* Board.swift */,
-				B7FFB6441D358B47003C148B /* Cell.swift */,
+				B7F8DF111D565AFC0044A180 /* Cell.swift */,
 				B7FFB65E1D359603003C148B /* Lesson.swift */,
 				B72FD8631D4370D500291F7D /* TableTask.swift */,
 				B72FD8651D4372F600291F7D /* Problem.swift */,
@@ -528,6 +528,7 @@
 				B72615781D531C8C00BF4139 /* SwifterTrends.swift in Sources */,
 				B72FD86C1D43882C00291F7D /* Problems.swift in Sources */,
 				B72615731D531C8C00BF4139 /* SwifterSearch.swift in Sources */,
+				B7F8DF121D565AFC0044A180 /* Cell.swift in Sources */,
 				B7A963621D38C14700561A50 /* MyView2.swift in Sources */,
 				B7A963641D38FBC800561A50 /* CustomPoneView.swift in Sources */,
 				B72FD8641D4370D500291F7D /* TableTask.swift in Sources */,
@@ -586,7 +587,6 @@
 				B72615361D530DEA00BF4139 /* Functionality.swift in Sources */,
 				B7F95DDC1D383197002D16CB /* MyTableViewCell.swift in Sources */,
 				B72615661D531C8C00BF4139 /* SwifterAppOnlyClient.swift in Sources */,
-				B7FFB6451D358B47003C148B /* Cell.swift in Sources */,
 				B7FFB65F1D359603003C148B /* Lesson.swift in Sources */,
 				B72615791D531C8C00BF4139 /* SwifterTweets.swift in Sources */,
 				B7FFB6391D34BAB0003C148B /* RegisterViewController.swift in Sources */,
@@ -710,8 +710,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -734,8 +735,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

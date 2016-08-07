@@ -69,7 +69,7 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
             moveLabel.text = "Ход черных"
         }
         
-        print(problems[index].move)
+       // print(problems[index].move)
         
         [view2, button, moveLabel, button2].forEach { self.view.addSubview($0) }
         
@@ -91,9 +91,10 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
             button.width == CGFloat(50)
         }
     }
+
     
     func setAPosition(index: Int) {
-        if index >= problems.count { return }
+        if index >= problems.count || index < 0 { return }
         
         Board.cleanABoard()
         let p = Problem()
@@ -101,11 +102,12 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
         var initPos: Int!
         var movesMade = 0
         var myPiece: Piece!
+        self.index = index
 
         let composition = problems[index].composition
         let move = problems[index].move
         let note = problems[index].note
-        var noteArr = note?.componentsSeparatedByString(", ")
+        let noteArr = note?.componentsSeparatedByString(", ")
         guard let myNoteArr = noteArr else{
             return
         }
@@ -122,7 +124,8 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
             
             
             let piece = firstPiece.substringToIndex(firstPiece.endIndex.predecessor())
-            
+            print("noteIndex=\(noteIndex)")
+
             if piece == "King" {
                 color = col == "1" ? .whiteColor() : .blackColor()
                 initPos = col == "1" ? 60 : 4
@@ -131,7 +134,11 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
                         noteIndex = 0
                     }
                 }
-                movesMade = Int(myNoteArr[noteIndex])!
+                guard let movesMade = Int(myNoteArr[noteIndex]) else{
+                    return
+                }
+                //let movesMade = Int(n)!
+                
 
                 //if initPos != Int(firstPiece) { movesMade = 1 }
                 
@@ -154,7 +161,10 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
                     color = UIColor.blackColor()
                     initPos = 59
                 }
-                myPiece = Queen(color: color, initPos: board[initPos], currentPos: board[Int(onePiece[1])!])
+                guard let pos = Int(onePiece[1]) else{
+                    return
+                }
+                myPiece = Queen(color: color, initPos: board[initPos], currentPos: board[pos])
                 
             }else if piece == "K"{
                 if col == "1"{
@@ -164,7 +174,10 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
                     color = UIColor.blackColor()
                     initPos = 57
                 }
-                myPiece = Knight(color: color, initPos: board[initPos], currentPos: board[Int(onePiece[1])!])
+                guard let pos = Int(onePiece[1]) else{
+                    return
+                }
+                myPiece = Knight(color: color, initPos: board[initPos], currentPos: board[pos])
                 
             }else if piece == "B"{
                 if col == "1"{
@@ -174,7 +187,10 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
                     color = UIColor.blackColor()
                     initPos = 57
                 }
-                myPiece = Bishop(color: color, initPos: board[initPos], currentPos: board[Int(onePiece[1])!])
+                guard let pos = Int(onePiece[1]) else{
+                    return
+                }
+                myPiece = Bishop(color: color, initPos: board[initPos], currentPos: board[pos])
                 
             }else if piece == "R"{
                 if col == "1"{
@@ -185,14 +201,19 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
                     initPos = 56
                 }
                 //forced unwrapping!!!
-                movesMade = Int(myNoteArr[noteIndex])!
+                guard let movesMade = Int(myNoteArr[noteIndex]) else{
+                    return
+                }
                 //print("I am rock \(movesMade)")
                // print("and \(noteIndex)")
                 noteIndex = noteIndex + 1
                 if movesMade == 0 {
                     initPos = board[Int(onePiece[1])!].id
                 }
-                myPiece = Rock(color: color, initPos: board[initPos], currentPos: board[Int(onePiece[1])!], movesMade: movesMade)
+                guard let pos = Int(onePiece[1]) else{
+                    return
+                }
+                myPiece = Rock(color: color, initPos: board[initPos], currentPos: board[pos], movesMade: movesMade)
 
 
             }else if piece == "P"{
@@ -203,21 +224,29 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
                     color = UIColor.blackColor()
                    // initPos = 56
                 }
-                let mp = Pone(color: color, currentPos: board[Int(onePiece[1])!])
+                guard let pos = Int(onePiece[1]) else{
+                    return
+                }
+                let mp = Pone(color: color, currentPos: board[pos])
                 //mp.possibleMoves = mp.detectMoves()
                 myPiece = mp
                 
             }
+            print("I am adding \(myPiece.name)")
             p.pieces.append(myPiece)
-            if p.pieces.count - 1 >= 0{
-                for index in 0...p.pieces.count - 1{
-                    p.pieces[index].possibleMoves = p.pieces[index].detectMoves()
-                }
+        }
+        
+
+        if p.pieces.count - 1 >= 0{
+        for index in 0...p.pieces.count - 1{
+            print("I am \(p.pieces[index].name)")
+                p.pieces[index].possibleMoves = p.pieces[index].detectMoves()
             }
         }
         
         view2.problem = p
         view2.problems = problems[index]
+        view2.probIndex = index
         
         view2.setNeedsDisplay()
     }

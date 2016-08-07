@@ -90,7 +90,7 @@ class TwitterViewController: OAuthViewController{
         })*/
         let swifter = Swifter(consumerKey: "Hbu9ERhR6qdCkVuV2UZcJFNre", consumerSecret: "IFrGqk2Xg0TcsF45suPrvAiSz3wjR8WEyFRoh8gRLKs6faFpuZ")
         swifter.authorizeWithCallbackURL(NSURL(string: "http://twitter.com")!, presentFromViewController: self, success: { (accessToken, response) in
-            print("sucess")
+            //print("sucess")
             self.callAlert("sucess")
             }) { (error) in
                 print(error)
@@ -113,12 +113,12 @@ class TwitterViewController: OAuthViewController{
 
     }
     func testTwitter(oauthswift: OAuth2Swift) {
-        print("I am here")
+       // print("I am here")
         oauthswift.client.get("https://api.twitter.com/1.1/statuses/mentions_timeline.json", parameters: [:],
                               success: {
                                 data, response in
                                 let jsonDict: AnyObject! = try? NSJSONSerialization.JSONObjectWithData(data, options: [])
-                                print(jsonDict)
+                               // print(jsonDict)
             }, failure: { error in
                 print(error)
         })

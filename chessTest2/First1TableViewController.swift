@@ -19,6 +19,7 @@ class First1TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = 128
         arr.append("Уроки")
         arr.append("Задачи")
         arr.append("Новости")
@@ -81,7 +82,7 @@ class First1TableViewController: UITableViewController {
             //            self.presentViewController(vc, animated: true, completion: nil)
         }else if indexPath.row == 2{
             //else if indexPath.row == 2{
-                print("I am here")
+               // print("I am here")
                 let layout = UICollectionViewFlowLayout()
                 layout.minimumLineSpacing = 0
             //let vc = UINavigationController(rootViewController: WeightLessonViewController())

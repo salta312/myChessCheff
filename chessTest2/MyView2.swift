@@ -57,6 +57,7 @@ class MyView2: UIView {
                 tempId = tempHeight*8+tempWidth
                 
                 if mainKing.isCheck() && tempId != mainKing.currentPos {
+                    print("isCheck")
                     myProtocol.showAlert("check")
                 } else if tempId >= 0 && tempId <= 63{
                     tapNumber += 1
@@ -179,13 +180,20 @@ class MyView2: UIView {
     }
     
     func checkTheAnswer(answer: String) {
+        print("probIndex =\(probIndex)")
         if answer == problems.answer {
-            myProtocol.showAlert("Correct")
-            probIndex += 1
-            myProtocol.setAPosition(probIndex)
+            self.myProtocol.showAlert("Correct")
+            self.setNeedsDisplay()
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(
+                1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+            
+                    self.probIndex += 1
+                    self.myProtocol.setAPosition(self.probIndex)
+            }
         } else {
             myProtocol.showAlert("You are wrong try again")
-            
+           // print(probIndex)
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(
                 1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
                 self.myProtocol.setAPosition(self.probIndex)

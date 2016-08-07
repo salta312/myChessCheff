@@ -15,6 +15,7 @@ class LessonsMenuTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = 128
         let leftBarButtonItem = UIBarButtonItem()
         leftBarButtonItem.title = "Close"
         leftBarButtonItem.target = self
@@ -64,14 +65,14 @@ class LessonsMenuTableViewController: UITableViewController {
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath.row)
+       // print(indexPath.row)
 
         if indexPath.row == 0{
             let vc = UINavigationController(rootViewController: LessonsViewController())
             self.presentViewController(vc, animated: true, completion: nil)
             
         }else if indexPath.row == 1{
-            print("no I am here")
+          //  print("no I am here")
             let vc = UINavigationController(rootViewController: WeightLessonViewController())
             self.presentViewController(vc, animated: true, completion: nil)
             

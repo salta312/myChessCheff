@@ -27,7 +27,7 @@ class Rock: Piece{
             self.img = self.resizeImage(UIImage(named: "brock")!, targetSize: CGSize(width: CGFloat(initPos.width), height: CGFloat(initPos.height)))
             self.initPict = UIImage(named: "brock")!
         }
-        self.possibleMoves = self.detectMoves()
+      //  self.possibleMoves = self.detectMoves()
         // board[currentPos]
         
         
@@ -48,7 +48,7 @@ class Rock: Piece{
             self.img = self.resizeImage(UIImage(named: "brock")!, targetSize: CGSize(width: CGFloat(initPos.width), height: CGFloat(initPos.height)))
             self.initPict = UIImage(named: "brock")!
         }
-        self.possibleMoves = self.detectMoves()
+       // self.possibleMoves = self.detectMoves()
         self.movesMade = movesMade
         // board[currentPos]
         
@@ -76,6 +76,7 @@ class Rock: Piece{
         
         if(caseNum == 1){
             if cell.parent1 != nil{
+                print("rock \(cell.parent1.id)")
                 if cell.parent1.taken == nil{
                     cells.append(cell.parent1)
                     //cell.parent1.isAttacked = true
@@ -105,6 +106,8 @@ class Rock: Piece{
             
         else if caseNum == 2{
             if cell.parrent2 != nil{
+                print("rock \(cell.parrent2.id)")
+
                 if cell.parrent2.taken == nil {
                     cells.append(cell.parrent2)
                     //cell.parrent2.isAttacked = true
@@ -135,6 +138,8 @@ class Rock: Piece{
         else if caseNum == 3{
             
             if cell.child1 != nil{
+                print("rock\(cell.child1.id)")
+
                 if cell.child1.taken == nil{
                     cells.append(cell.child1)
                     //cell.child1.isAttacked = true
@@ -164,6 +169,7 @@ class Rock: Piece{
         }else if caseNum == 4{
             
             if cell.child2 != nil{
+                print("rock \(cell.child2.id)")
                 if cell.child2.taken == nil{
                     cells.append(cell.child2)
                     //cell.child2.isAttacked = true
