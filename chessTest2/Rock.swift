@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 class Rock: Piece{
-    var board:[Cell]!
+   // var board:[Cell]!
     var movesMade:Int!
     init(color:UIColor, initPos: Cell, currentPos: Cell){
         super.init()
@@ -68,6 +68,36 @@ class Rock: Piece{
     /*here is a mistacke we pass new array of cells recursively */
     //i know this is not the best way to solve the problem
     var cells = [Cell]()
+    override func movesMade(finalPos: Cell){
+        var br = false
+        var cells: [Cell]!
+        guard let possibleM = possibleMoves else{
+            return
+        }
+        if possibleM.count - 1 >= 0{
+            for index in 0...possibleM.count-1{
+                cells = possibleM[index].possibleMoves
+                if cells.count - 1 >= 0{
+                    for index1 in 0...cells.count-1{
+                        if cells[index1].id == finalPos.id{
+                            self.currentPos = finalPos
+                            board[currentPos.id].taken = nil
+                            board[finalPos.id].taken = self
+                            self.movesMade = self.movesMade + 1
+                            br = true
+                            break
+                            //Board.cleanABoard()
+                            
+                        }
+                    }
+                }
+                if br{
+                    break
+                }
+            }
+        }
+        
+    }
     
     func diagon(cell: Cell, iter: Int, caseNum: Int)-> [Cell]{
         if iter == 1{
@@ -76,7 +106,7 @@ class Rock: Piece{
         
         if(caseNum == 1){
             if cell.parent1 != nil{
-                print("rock \(cell.parent1.id)")
+               // print("rock \(cell.parent1.id)")
                 if cell.parent1.taken == nil{
                     cells.append(cell.parent1)
                     //cell.parent1.isAttacked = true
@@ -106,7 +136,7 @@ class Rock: Piece{
             
         else if caseNum == 2{
             if cell.parrent2 != nil{
-                print("rock \(cell.parrent2.id)")
+               // print("rock \(cell.parrent2.id)")
 
                 if cell.parrent2.taken == nil {
                     cells.append(cell.parrent2)
@@ -138,7 +168,7 @@ class Rock: Piece{
         else if caseNum == 3{
             
             if cell.child1 != nil{
-                print("rock\(cell.child1.id)")
+                //print("rock\(cell.child1.id)")
 
                 if cell.child1.taken == nil{
                     cells.append(cell.child1)
@@ -169,7 +199,7 @@ class Rock: Piece{
         }else if caseNum == 4{
             
             if cell.child2 != nil{
-                print("rock \(cell.child2.id)")
+               // print("rock \(cell.child2.id)")
                 if cell.child2.taken == nil{
                     cells.append(cell.child2)
                     //cell.child2.isAttacked = true

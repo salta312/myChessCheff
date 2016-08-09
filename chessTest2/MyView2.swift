@@ -57,7 +57,7 @@ class MyView2: UIView {
                 tempId = tempHeight*8+tempWidth
                 
                 if mainKing.isCheck() && tempId != mainKing.currentPos {
-                    print("isCheck")
+                    //print("isCheck")
                     myProtocol.showAlert("check")
                 } else if tempId >= 0 && tempId <= 63{
                     tapNumber += 1
@@ -70,9 +70,15 @@ class MyView2: UIView {
     
     func isPossibleMove(previousTap: Int!, tempId: Int!) ->Bool{
        // print("------------\(previousTap)------------------")
+
         var moves: [Move]?
         var posibleMoves = [Cell]()
         if tempId >= 0 && tempId <= 63{
+            if arr[previousTap].taken != nil && arr[tempId].bKingMove != nil && arr[tempId].wKingMove != nil{
+                if arr[previousTap].taken.name == Pieces.king && arr[tempId].bKingMove == true && arr[tempId].wKingMove == true{
+                    return false
+                }
+            }
             if arr[previousTap].taken != nil{
                 moves = arr[previousTap].taken.possibleMoves
                 guard let m = moves else{
@@ -137,7 +143,8 @@ class MyView2: UIView {
                 if tempId != nil && previousTap != nil{
                     if self.isPossibleMove(previousTap, tempId: tempId) {
                         if arr[tempId].taken != nil{
-                            if arr[previousTap].taken.color != arr[tempId].taken.color && arr[tempId].taken.name != Pieces.king {
+
+                           if arr[previousTap].taken.color != arr[tempId].taken.color && arr[tempId].taken.name != Pieces.king {
                                 let p = arr[previousTap].taken
                                // let prev = arr[tempId].taken
                                 p.currentPos = arr[tempId]
@@ -180,7 +187,7 @@ class MyView2: UIView {
     }
     
     func checkTheAnswer(answer: String) {
-        print("probIndex =\(probIndex)")
+        //print("probIndex =\(probIndex)")
         if answer == problems.answer {
             self.myProtocol.showAlert("Correct")
             self.setNeedsDisplay()

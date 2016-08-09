@@ -70,6 +70,8 @@
 		B7F95DD81D381DE7002D16CB /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F95DD71D381DE7002D16CB /* MenuTableViewController.swift */; };
 		B7F95DDA1D3825D7002D16CB /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F95DD91D3825D7002D16CB /* TempViewController.swift */; };
 		B7F95DDC1D383197002D16CB /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F95DDB1D383197002D16CB /* MyTableViewCell.swift */; };
+		B7FC52AA1D59F0C1001111C3 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC52A91D59F0C1001111C3 /* Position.swift */; };
+		B7FC52AC1D5A0E74001111C3 /* AdditionalLessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC52AB1D5A0E73001111C3 /* AdditionalLessonsViewController.swift */; };
 		B7FDF7481D50ADA900FE418F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FDF7451D50ADA900FE418F /* TwitterKit.framework */; };
 		B7FDF7491D50ADA900FE418F /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B7FDF7461D50ADA900FE418F /* TwitterKitResources.bundle */; };
 		B7FDF74A1D50ADA900FE418F /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FDF7471D50ADA900FE418F /* TwitterCore.framework */; };
@@ -158,6 +160,8 @@
 		B7F95DD71D381DE7002D16CB /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		B7F95DD91D3825D7002D16CB /* TempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		B7F95DDB1D383197002D16CB /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		B7FC52A91D59F0C1001111C3 /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		B7FC52AB1D5A0E73001111C3 /* AdditionalLessonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalLessonsViewController.swift; sourceTree = "<group>"; };
 		B7FDF7451D50ADA900FE418F /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		B7FDF7461D50ADA900FE418F /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		B7FDF7471D50ADA900FE418F /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 				B72FD8651D4372F600291F7D /* Problem.swift */,
 				B72FD86B1D43882C00291F7D /* Problems.swift */,
 				B72615351D530DEA00BF4139 /* Functionality.swift */,
+				B7FC52A91D59F0C1001111C3 /* Position.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				B72615331D530AEB00BF4139 /* FirstTableViewController.swift */,
 				B726157F1D531F9200BF4139 /* First1TableViewController.swift */,
 				B732C2421D5333F900EBE15A /* LessonsMenuTableViewController.swift */,
+				B7FC52AB1D5A0E73001111C3 /* AdditionalLessonsViewController.swift */,
 			);
 			name = viewControllers;
 			sourceTree = "<group>";
@@ -585,8 +591,10 @@
 				B726156B1D531C8C00BF4139 /* SwifterFollowers.swift in Sources */,
 				B72615671D531C8C00BF4139 /* SwifterAuth.swift in Sources */,
 				B72615361D530DEA00BF4139 /* Functionality.swift in Sources */,
+				B7FC52AA1D59F0C1001111C3 /* Position.swift in Sources */,
 				B7F95DDC1D383197002D16CB /* MyTableViewCell.swift in Sources */,
 				B72615661D531C8C00BF4139 /* SwifterAppOnlyClient.swift in Sources */,
+				B7FC52AC1D5A0E74001111C3 /* AdditionalLessonsViewController.swift in Sources */,
 				B7FFB65F1D359603003C148B /* Lesson.swift in Sources */,
 				B72615791D531C8C00BF4139 /* SwifterTweets.swift in Sources */,
 				B7FFB6391D34BAB0003C148B /* RegisterViewController.swift in Sources */,

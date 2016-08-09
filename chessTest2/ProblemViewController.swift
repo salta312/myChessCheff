@@ -124,7 +124,7 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
             
             
             let piece = firstPiece.substringToIndex(firstPiece.endIndex.predecessor())
-            print("noteIndex=\(noteIndex)")
+           // print("noteIndex=\(noteIndex)")
 
             if piece == "King" {
                 color = col == "1" ? .whiteColor() : .blackColor()
@@ -232,14 +232,14 @@ class ProblemViewController: UIViewController, ProblemVCProtocol {
                 myPiece = mp
                 
             }
-            print("I am adding \(myPiece.name)")
+           // print("I am adding \(myPiece.name)")
             p.pieces.append(myPiece)
         }
         
 
         if p.pieces.count - 1 >= 0{
         for index in 0...p.pieces.count - 1{
-            print("I am \(p.pieces[index].name)")
+           // print("I am \(p.pieces[index].name)")
                 p.pieces[index].possibleMoves = p.pieces[index].detectMoves()
             }
         }

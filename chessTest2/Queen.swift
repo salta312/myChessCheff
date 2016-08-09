@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 class Queen: Piece{
-    var board:[Cell]!
+  //  var board:[Cell]!
     init(color:UIColor, initPos: Cell, currentPos: Cell){
         super.init()
         self.weight = 9

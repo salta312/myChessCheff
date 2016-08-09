@@ -25,8 +25,11 @@ class LessonsMenuTableViewController: UITableViewController {
         navigationController?.navigationBar.backgroundColor = UIColor(red: 1/255, green: 152/255, blue: 215/255, alpha: 1)
         arr.append("Как ходят фигуры")
         arr.append("Ценность фигур")
+        arr.append("Дополнительный материал")
         images.append(UIImage(named: "number-1")!)
         images.append(UIImage(named: "number-two")!)
+        images.append(UIImage(named: "number-3")!)
+        
         
 
     }
@@ -78,6 +81,10 @@ class LessonsMenuTableViewController: UITableViewController {
             
             //delegate?.didSelectViewController(vc)
             //            self.presentViewController(vc, animated: true, completion: nil)
+        }else if indexPath.row == 2{
+            let vc = UINavigationController(rootViewController: AdditionalLessonsViewController())
+            self.presentViewController(vc, animated: true, completion: nil)
+            
         }
     }
  

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class Bishop: Piece{
-    var board:[Cell]!
+   // var board:[Cell]!
     //var initPict: UIImage!
     init(color:UIColor, initPos: Cell, currentPos: Cell){
         super.init()

@@ -26,12 +26,16 @@ class LessonsViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor(red: 249/255, green: 97/255, blue: 91/255, alpha: 1)
         let less1 = Lesson()
-        let pieces1 = [Queen(color: UIColor.blackColor(), initPos: board[3], currentPos: board[28])]
+        let queen = Queen(color: UIColor.blackColor(), initPos: board[3], currentPos: board[28])
+        queen.possibleMoves = queen.detectMoves()
+        let pieces1 = [queen]
         less1.pieces = pieces1
         less1.col = [UIColor.blackColor()]
         less1.text = "Ферзь ходит по вертикалям, горизонталям и диагоналям"
         let less2 = Lesson()
-        let pieces2 = [Rock(color: UIColor.whiteColor(), initPos: board[63], currentPos: board[28])]
+        let rock = Rock(color: UIColor.whiteColor(), initPos: board[63], currentPos: board[28])
+        rock.possibleMoves = rock.detectMoves()
+        let pieces2 = [rock]
         
         less2.pieces = pieces2
         less2.col = [newcolor]
@@ -39,13 +43,17 @@ class LessonsViewController: UIViewController {
         lessons.append(less1)
         lessons.append(less2)
         let less3 = Lesson()
-        let pices3 = [Bishop(color:UIColor.whiteColor(), initPos: board[58], currentPos: board[28])]
+        let bishop = Bishop(color:UIColor.whiteColor(), initPos: board[58], currentPos: board[28])
+        bishop.possibleMoves = bishop.detectMoves()
+        let pices3 = [bishop]
         less3.pieces = pices3
         less3.col = [newcolor]
         less3.text = "Слон ходит по диагонали"
         lessons.append(less3)
         let less4 = Lesson()
-        let pieces4 = [Knight(color: UIColor.blackColor(), initPos: board[1], currentPos: board[28])]
+        let knight = Knight(color: UIColor.blackColor(), initPos: board[1], currentPos: board[28])
+        knight.possibleMoves = knight.detectMoves()
+        let pieces4 = [knight]
         less4.pieces = pieces4
         less4.col = [UIColor.blackColor()]
         less4.text = "Конь ходит буквой Г: 2 клетки по прямой (вертикали или горизонтали) и 1 клетка сворачивает"
@@ -63,8 +71,10 @@ class LessonsViewController: UIViewController {
         lessons.append(less5)
         let less6 = Lesson()
         let king = King(color: UIColor.whiteColor(), initPos: board[60], currentPos: board[8], movesMade: 1)
-        let queen = Queen(color: UIColor.blackColor(), initPos: board[3], currentPos: board[28])
-        let pieces6 = [king, queen]
+        king.possibleMoves = king.detectMoves()
+        let queen1 = Queen(color: UIColor.blackColor(), initPos: board[3], currentPos: board[28])
+        queen1.possibleMoves = queen1.detectMoves()
+        let pieces6 = [king, queen1]
         less6.pieces = pieces6
         less6.text =  "Король может ходить по всем направлениям на 1 клетку (по горизонтали, вертикали и диагонали), кроме клеток атакованных другими фигурами"
         less6.col = [newcolor, UIColor.blackColor()]

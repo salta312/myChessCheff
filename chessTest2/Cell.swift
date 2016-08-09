@@ -19,6 +19,8 @@ class Cell: NSObject{
     //var isAttacked:Bool!
     var wAttacked: Bool!
     var bAttacked: Bool!
+    var wKingMove: Bool!
+    var bKingMove: Bool!
     var height = Sheight
     var width = SWidth
 //    var width = Float(250/8)

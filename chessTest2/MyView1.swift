@@ -38,13 +38,19 @@ class MyView1: UIView {
                     guard let moves = piece.possibleMoves else{
                         return
                     }
+                   // let moves = piece.detectMoves()
+             
                     // need to change
                     if moves.count > 0{
                         for index in 0...moves.count-1{
                             var cells=moves[index].possibleMoves
                             if(cells.count>0){
                                 for ind in 0...cells.count-1{
+                                    if cells[ind].bKingMove == true && cells[ind].wKingMove == true{
+                                        continue
+                                    }
                                     // CGRectMa
+                                   // print("pm")
                                     let rect = CGRectMake(CGFloat(cells[ind].x+arr[0].width/2), CGFloat(cells[ind].y+arr[0].height/2), CGFloat(arr[0].width/7), CGFloat(arr[0].height/7))
                                     CGContextAddRect(context, rect)
                                     CGContextSetFillColorWithColor(context, lesson.col[i].CGColor)

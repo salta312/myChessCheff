@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 class Pone: Piece{
-    var board:[Cell]!
+  //  var board:[Cell]!
     var movesMade: Int!
     init(color:UIColor, currentPos:Cell){
         super.init()

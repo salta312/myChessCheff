@@ -98,13 +98,7 @@ class First1TableViewController: UITableViewController {
                 //     print("I am here")
                 let probs = result.getCurrentPage()
                 //     print(cities)
-                for obj in probs {
-                    //print(obj)
-                    let prob=obj as! Problems
-                    // print(city.title)
-                    self.problems.append(prob)
-                    //print(prob.composition)
-                }
+                self.problems = probs as! [Problems]
                 let vc = ProblemViewController()
                 vc.problems = self.problems
                 SVProgressHUD.dismiss()

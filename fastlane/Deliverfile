@@ -7,7 +7,7 @@
 # Feel free to remove the following line if you use fastlane (which you should)
 
 username "info@n17r.com" # your Apple ID user
-app_version "2.0"
+app_version "2.1"
 app_icon "./fastlane/metadata/AppIcon.png"
 metadata_path "./fastlane/metadata"
 screenshots_path "./fastlane/screenshots"
